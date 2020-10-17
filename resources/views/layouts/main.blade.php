@@ -6,10 +6,9 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Label Multipurpose Startup Business Template">
-    <meta name="keywords" content="Label HTML Template, Label Startup Business Template, Startup Template">
+    <meta name="description" content="Suara Mahasiswa - Aplikasi Pemilu Online Kampus">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600%7COpen+Sans:400%7CVarela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}"> <!-- Resource style -->
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
@@ -31,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto navbar-right">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/')}}">Home</a></li>  
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/daftar-pemilih')}}">Daftar Pemilih</a></li>  
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/cek-pemilih')}}">Cek Status Pemilih</a></li>  
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/calon')}}">Kenali Calon</a></li>   
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{url('/panduan')}}">Cara Memilih</a></li>    
                 <li class="nav-item"><a class="nav-link btn btn-sm btn-info" href="{{url('/pilih')}}" style="color:white;">Pilih  Sekarang</a></li>    

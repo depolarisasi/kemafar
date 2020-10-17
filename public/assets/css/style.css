@@ -1,6 +1,7 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -36,7 +37,7 @@
  --breakpoint-md:768px;
  --breakpoint-lg:992px;
  --breakpoint-xl:1200px;
- --font-family-sans-serif:"Inter UI",
+ --font-family-sans-serif:'Inter',
  -apple-system,
  BlinkMacSystemFont,
  "Segoe UI",
@@ -81,7 +82,7 @@ section {
 }
 body {
  margin:0;
- font-family:Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-size:1rem;
  font-weight:400;
  line-height:1.5;
@@ -5307,7 +5308,7 @@ a.close.disabled {
  z-index:1070;
  display:block;
  margin:0;
- font-family:Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-style:normal;
  font-weight:400;
  line-height:1.5;
@@ -5413,7 +5414,7 @@ a.close.disabled {
  left:0;
  z-index:1060;
  max-width:276px;
- font-family:Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-style:normal;
  font-weight:400;
  line-height:1.5;
@@ -10238,36 +10239,6 @@ svg.bg-primary-3-alt * {
 }
 .text-primary svg.icon:not([class*=bg-]) * {
  fill:#2d63d7
-}
-@font-face {
- font-family:Inter UI;
- font-style:normal;
- font-weight:400;
- font-display:swap;
- unicode-range:U+000-5ff;
- src:url(/static/Inter-UI-Regular-76677d9e1ccc0e1f33fa6b044a743768.woff2) format("woff2"),
- url(/static/Inter-UI-Regular-ecf7c639683dfcb4868861e0c613c455.woff) format("woff"),
- url(/static/Inter-UI-upright.var-0fc22fce5d80b41c1d5cff08157fd0c9.woff2) format("woff2-variations")
-}
-@font-face {
- font-family:Inter UI;
- font-style:normal;
- font-weight:500;
- font-display:swap;
- unicode-range:U+000-5ff;
- src:url(/static/Inter-UI-Medium-e0012ba74a933d326e8a466003fc3507.woff2) format("woff2"),
- url(/static/Inter-UI-Medium-48dfecfe37de0ef8f0e2c2d2e6992e9c.woff) format("woff"),
- url(/static/Inter-UI-upright.var-0fc22fce5d80b41c1d5cff08157fd0c9.woff2) format("woff2-variations")
-}
-@font-face {
- font-family:Inter UI;
- font-style:normal;
- font-weight:600;
- font-display:swap;
- unicode-range:U+000-5ff;
- src:url(/static/Inter-UI-Bold-b6f1695769d6d6b5f20d1c6492914189.woff2) format("woff2"),
- url(/static/Inter-UI-Bold-e2158f600a4b0175b73dfefb0d2fe8f8.woff) format("woff"),
- url(/static/Inter-UI-upright.var-0fc22fce5d80b41c1d5cff08157fd0c9.woff2) format("woff2-variations")
 }
 html {
  -moz-osx-font-smoothing:grayscale;
@@ -18176,19 +18147,9 @@ body.fade-page {
  }
 }
 body {
- font-family:Inter UI,sans-serif;
+ font-family:'Inter',sans-serif;
  color:#2b2f33
-}
-body form {
- display:none
-}
-body #___gatsby form {
- display:block
-}
-::selection {
- background-color:#2d63d7;
- color:#fff
-}
+} 
 .bg-img {
  position:absolute;
  top:0;

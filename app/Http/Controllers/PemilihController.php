@@ -73,13 +73,15 @@ public function importpemilih(Request $request)
     }
 
     public function edit($id){
-        $edit = Angkatan::where('idangkatan', $id)->first();
-        return view('admin.angkatan.edit')->with(compact('edit'));
+        $edit = Pemilih::join('angkatan','pemilih.pemilih_angkatan','angkatan.idangkatan')
+        ->select('pemilih.*','angkatan.*')->where('pemilih.idpemilih', $id)->first();
+        $angkatan = Angkatan::get();
+        return view('admin.pemilih.edit')->with(compact('edit','angkatan'));
 
     }
 
     public function update(Request $request){
-        $user = Angkatan::where('idangkatan', $request->idangkatan)->first();
+        $user = Pemilih::where('idpemilih', $request->idpemilih)->first();
         $update = collect($request->all()); 
 
                 try {
@@ -91,13 +93,13 @@ public function importpemilih(Request $request)
                 }
 
                 alert('Success','Berhasil Diubah', 'success');
-                return redirect('pengelola/angkatan');
+                return redirect('pengelola/pemilih');
 
     } 
 
     public function delete($id){
 
-        $user = Angkatan::where('idangkatan', $id)->first();
+        $user = Pemilih::where('idpemilih', $id)->first();
         try {
             $user->delete();
         } catch (QE $e) {
@@ -107,6 +109,19 @@ public function importpemilih(Request $request)
         }
 
         alert('Success','Berhasil Dihapus', 'success');
-        return redirect('pengelola/angkatan');
+        return redirect('pengelola/pemilih');
+    }
+
+    public function checkdpt(){
+        return view('cekpemilih');
+    }
+
+    public function cekpemilih(Request $request){
+        $user = Pemilih::where('pemilih_npm',$request->npm)->first();
+        if(!empty($user)){
+            return response()->json('Data is successfully added', 200);
+        }else {
+            return response()->json('NOT FOUND', 400);
+        }
     }
 }

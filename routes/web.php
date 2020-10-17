@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 
 Route::auth();
+
+Route::get('cek-pemilih', [App\Http\Controllers\PemilihController::class, 'checkdpt']);
+Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpemilih']);
+
+
 Route::group(['prefix' => 'pengelola', 'middleware' => 'auth'], function() {
 
     Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);

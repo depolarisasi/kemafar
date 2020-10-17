@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', 'Ubah Angkatan - ')
+@section('title', 'Ubah Pemilih - ')
 @section('content') 
                         <div class="row page-title align-items-center">
                             <div class="col-sm-4 col-xl-6">
-                                <h4 class="mb-1 mt-0">Ubah Angkatan</h4>
+                                <h4 class="mb-1 mt-0">Ubah Pemilih</h4>
                             </div>
                             <div class="col-sm-8 col-xl-6">
-                               <a href="{{url('pengelola/angkatan')}}" class="btn btn-md btn-primary text-white float-right">Kembali</a> 
+                               <a href="{{url('pengelola/pemilih')}}" class="btn btn-md btn-primary text-white float-right">Kembali</a> 
                             </div>
                         </div>
 
@@ -15,30 +15,45 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body p-3"> 
-                                    <h4 class="header-title mt-0 mb-1">Ubah Angkatan</h4> 
+                                    <h4 class="header-title mt-0 mb-1">Ubah Pemilih</h4> 
                                    
-<form method="POST" action="{{url('pengelola/angkatan/edit')}}">
+<form method="POST" action="{{url('pengelola/pemilih/edit')}}">
     @csrf
-    <input type="hidden" name="idangkatan" value="{{$edit->idangkatan}}">
+    <input type="hidden" name="idpemilih" value="{{$edit->idpemilih}}">
     <div class="form-group row mt-4">
-      <label class="col-md-2" >Nama Angkatan</label>
+      <label class="col-md-2" >NPM Pemilih</label>
       <div class="col-md-3">
-      <input type="text" class="form-control" name="angkatan_nama" value="{{$edit->angkatan_nama}}" required autofocus>
+      <input type="text" class="form-control" name="pemilih_npm" value="{{$edit->pemilih_npm}}">
       </div>
     </div>
     <div class="form-group row mt-4">
-      <label class="col-md-2" >Tahun Angkatan</label>
+      <label class="col-md-2" >Nama Pemilih</label>
       <div class="col-md-3">
-      <input type="text" class="form-control" name="angkatan_tahun"  value="{{$edit->angkatan_tahun}}" required>
-
+      <input type="text" class="form-control" name="pemilih_nama"  value="{{$edit->pemilih_nama}}">
       </div>
-    </div> 
-   
+    </div>
+    <div class="form-group row mt-4">
+      <label class="col-md-2" >Email Student Unpad Pemilih</label>
+      <div class="col-md-3">
+      <input type="text" class="form-control" name="pemilih_email" value="{{$edit->pemilih_email}}">
+      </div>
+    </div>
+    <div class="form-group row mt-4">
+      <label class="col-md-2" >Angkatan Pemilih</label>
+      <div class="col-md-3"> 
+    <select class="form-control" name="pemilih_angkatan">
+      <option value="{{$edit->pemilih_angkatan}}" selected>-- {{$edit->angkatan_nama}} -- </option>
+      @foreach($angkatan as $a)
+      <option value="{{$a->idangkatan}}">{{$a->angkatan_tahun}} / {{$a->angkatan_nama}}</option> 
+      @endforeach
+    </select>
+      </div>
+    </div>   
    
 
   <div class="form-group row mt-4">
     <div class="col-md-12">
-<button class="btn btn-md btn-primary" type="submit">Ubah Angkatan</button>
+<button class="btn btn-md btn-primary" type="submit">Ubah Pemilih</button>
     </div>
 </div>
 

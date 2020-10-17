@@ -33,6 +33,6 @@ class Pemilih extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('angkatan');
+        Schema::dropIfExists('pemilih');
     }
 }

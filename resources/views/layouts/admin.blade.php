@@ -2,24 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@yield('title') Doa Administrator</title>
+        <title>@yield('title') KPUM</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('adminasset/images/favicon.ico')}}">
-
-        <!-- plugins -->
-        <link href="{{asset('adminasset/libs/flatpickr/flatpickr.min.css')}}" rel="stylesheet" type="text/css" />
-
         <!-- App css -->
         <link href="{{asset('adminasset/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('adminasset/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('adminasset/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.7/dist/sweetalert2.min.css">
         @yield('css')
     </head>
 
     <body>
+    @include('sweetalert::alert')
         <!-- Begin page -->
         <div id="wrapper"> 
             <!-- Topbar Start -->
@@ -28,8 +26,8 @@
                     <!-- LOGO -->
                     <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="a{{asset('dmin/images/logo.png')}}" alt="" height="24" />
-                            <span class="d-inline h5 ml-1 text-logo">Doa</span>
+                            <img src="a{{asset('adminasset/images/logo.png')}}" alt="" height="24" />
+                            <span class="d-inline h5 ml-1 text-logo">KPUM</span>
                         </span>
                         <span class="logo-sm">
                             <img src="{{asset('adminasset/images/logo.png')}}" alt="" height="24">
@@ -61,7 +59,7 @@
                                     <img src="{{asset('adminasset/images/users/avatar-7.jpg')}}" alt="user-image" class="rounded-circle align-self-center" />
                                     <div class="media-body text-left">
                                         <h6 class="pro-user-name ml-2 my-0">
-                                            <span>Shreyu N</span>
+                                            <span>KPUM</span>
                                             <span class="pro-user-desc text-muted d-block mt-1">Administrator </span>
                                         </h6>
                                     </div>
@@ -140,34 +138,34 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="{{url('/admin')}}">
+                                <a href="{{url('/pengelola')}}">
                                     <i data-feather="home"></i> 
                                     <span> Dashboard </span>
                                 </a>
                             </li>
                             <li class="menu-title">Platform</li>
                             <li>
-                                <a href="{{url('admin/post')}}">
+                                <a href="{{url('pengelola/pemilih')}}">
                                     <i data-feather="calendar"></i>
-                                    <span> Post </span>
+                                    <span> Daftar Pemilih Tetap </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('admin/category')}}">
+                                <a href="{{url('pengelola/calon')}}">
                                     <i data-feather="box"></i>
-                                    <span> Category </span>
+                                    <span> Calon Pemilihan</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('admin/user')}}">
+                                <a href="{{url('pengelola/angkatan')}}">
                                     <i data-feather="user"></i>
-                                    <span> User </span>
+                                    <span> Angkatan </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
                                     <i data-feather="inbox"></i>
-                                    <span> Email </span>
+                                    <span> Hasil Suara </span>
                                     <span class="menu-arrow"></span>
                                 </a>
 
@@ -225,6 +223,7 @@
         <script src="{{asset('adminasset/libs/moment/moment.min.js')}}"></script>
         <script src="{{asset('adminasset/libs/apexcharts/apexcharts.min.js')}}"></script>
         <script src="{{asset('adminasset/libs/flatpickr/flatpickr.min.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.7/dist/sweetalert2.all.min.js"></script>
 
         <!-- page js -->
         <script src="{{asset('adminasset/js/pages/dashboard.init.js')}}"></script>

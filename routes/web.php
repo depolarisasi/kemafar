@@ -17,11 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::auth();
 Route::group(['prefix' => 'pengelola', 'middleware' => 'auth'], function() {
-    Route::auth();
+
     Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
     
 Route::group(['prefix' => 'angkatan'], function() { 
@@ -32,4 +30,17 @@ Route::group(['prefix' => 'angkatan'], function() {
     Route::post('edit', [App\Http\Controllers\AngkatanController::class, 'update']);
     Route::get('delete/{id}', [App\Http\Controllers\AngkatanController::class, 'delete']);
 });
+
+Route::group(['prefix' => 'pemilih'], function() { 
+    Route::get('/', [App\Http\Controllers\PemilihController::class, 'index']);
+    Route::get('new', [App\Http\Controllers\PemilihController::class, 'new']);
+    Route::post('new', [App\Http\Controllers\PemilihController::class, 'store']);
+    Route::get('import', [App\Http\Controllers\PemilihController::class, 'importpage']);
+    Route::post('import', [App\Http\Controllers\PemilihController::class, 'importpemilih']);
+    Route::get('edit/{id}', [App\Http\Controllers\PemilihController::class, 'edit']);
+    Route::post('edit', [App\Http\Controllers\PemilihController::class, 'update']);
+    Route::get('delete/{id}', [App\Http\Controllers\PemilihController::class, 'delete']);
+});
+
+
 });

@@ -34,7 +34,7 @@
                     <h4 class="mb-3">Program Kerja & Rencana</h4>
                     <h4 class="mb-3">Informasi Kampanye</h4>
                     <h4 class="mb-3">Profil & CV</h4> 
-                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="{{url('calon'}}">Kenali Calon</a>
+                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="{{url('calon')}}">Kenali Calon</a>
                       </div>
                     </div>
                   </div>

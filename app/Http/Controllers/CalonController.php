@@ -287,7 +287,7 @@ class CalonController extends Controller
         return view('profilbem')->with(compact('detail'));
     }
 
-    public function profilcalonnbpm($id){
+    public function profilcalonbpm($id){
         $detail = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')->where('calonbpm.idcalonbpm',$id)->first();
         return view('profilbpm')->with(compact('detail'));

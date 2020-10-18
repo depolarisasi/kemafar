@@ -56,8 +56,7 @@
                 <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                 </div>
-                <span class="lead mt-n1"><strong>All Browser Support</strong> 
-                  for a Global 500 company’s app, by developing a stronger grasp of user behavior and reducing its cognitive load</span>
+                <span class="lead mt-n1"><strong>All Browser Support</strong> Laptop? PC? Smartphone? Chrome? Firefox? Safari? semua bisa !</span>
                 </li>
                 <li class="d-flex py-2">
                   <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">

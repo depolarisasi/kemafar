@@ -19,6 +19,8 @@
     @yield('css')
   </head>
   <body>
+    
+  @include('sweetalert::alert')
     <div class="wrapper">
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">

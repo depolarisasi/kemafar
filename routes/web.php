@@ -31,6 +31,12 @@ Route::get('calon/bpm/', [App\Http\Controllers\CalonController::class, 'semuacal
 Route::get('calon/bem/{id}', [App\Http\Controllers\CalonController::class, 'profilpasanganbem']);
 Route::get('calon/bpm/{id}', [App\Http\Controllers\CalonController::class, 'profilcalonbpm']);
 
+
+
+Route::get('pilih', [App\Http\Controllers\SuaraController::class, 'pilihauthenticate']);
+Route::post('pilih', [App\Http\Controllers\SuaraController::class, 'authenticateuser']);
+Route::get('pilih/calon', [App\Http\Controllers\SuaraController::class, 'pilihauthenticated']);
+
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');

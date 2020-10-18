@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CalonBem;
-use App\Models\CalonBpm;
+use App\Models\CalonBPM;
 use App\Models\Angkatan; 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
@@ -152,7 +152,7 @@ class CalonController extends Controller
 
      // BPM //
      public function indexbpm(){
-        $bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        $bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')->orderBy('angkatan.idangkatan','asc')->get();
         return view('admin.calon.bpm.index')->with(compact('bpm'));
     }
@@ -187,7 +187,7 @@ class CalonController extends Controller
             }
         }
         try {
-        CalonBpm::create($store->all());
+        CalonBPM::create($store->all());
         } catch (QE $e) { 
             alert('Error','Database Error', 'error');
             return $e;
@@ -201,7 +201,7 @@ class CalonController extends Controller
     }
 
     public function editbpm($id){
-        $edit = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        $edit = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')
         ->where('calonbpm.idcalonbpm', $id)->first(); 
         $angkatan = Angkatan::get();
@@ -211,7 +211,7 @@ class CalonController extends Controller
 
     public function updatebpm(Request $request){
       
-        $bpm = CalonBpm::where('idcalonbpm', $request->idcalonbpm)->first();
+        $bpm = CalonBPM::where('idcalonbpm', $request->idcalonbpm)->first();
         $update = collect($request->all()); 
         
         if ($request->file('fotosuratsuara') == '') {
@@ -252,7 +252,7 @@ class CalonController extends Controller
 
     public function deletebpm($id){
 
-        $user = CalonBpm::where('idcalonbpm', $id)->first();
+        $user = CalonBPM::where('idcalonbpm', $id)->first();
         try {
             $user->delete();
         } catch (QE $e) {
@@ -266,7 +266,7 @@ class CalonController extends Controller
     }
 
     public function showbpm($id){
-        $bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatanketua','=','angkatan.idangkatan')
+        $bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatanketua','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')
         ->where('calonbpm.idcalonbpm',$id)->first();
         return view('admin.calon.bpm.show')->with(compact('bpm'));
@@ -276,7 +276,7 @@ class CalonController extends Controller
         $bem = CalonBem::join('angkatan','calonbem.calon_angkatanketua','=','angkatan.idangkatan')
         ->select('calonbem.*','angkatan.*')->orderBy('calonbem.calon_nourut','asc')->get();
         
-        $bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        $bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')->orderBy('calonbpm.calon_angkatancalon','asc')->get();
         return view('kenalicalon')->with(compact('bem','bpm'));
     }
@@ -288,13 +288,13 @@ class CalonController extends Controller
     }
 
     public function profilcalonnbpm($id){
-        $detail = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        $detail = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')->where('calonbpm.idcalonbpm',$id)->first();
         return view('profilbpm')->with(compact('detail'));
     }
 
     public function semuacalonbpm(){
-        $bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        $bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.*','angkatan.*')->orderBy('calonbpm.calon_angkatancalon','asc')->get();
         return view('semuacalonbpm')->with(compact('bpm'));
     }

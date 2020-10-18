@@ -151,9 +151,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('pengelola/calon')}}">
+                                <a href="{{url('pengelola/calon-bem')}}">
                                     <i data-feather="box"></i>
-                                    <span> Calon Pemilihan</span>
+                                    <span> Calon BEM</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url('pengelola/calon-bpm')}}">
+                                    <i data-feather="box"></i>
+                                    <span> Calon BPM</span>
                                 </a>
                             </li>
                             <li>

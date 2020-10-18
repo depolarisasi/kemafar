@@ -22,6 +22,13 @@ Route::auth();
 Route::get('cek-pemilih', [App\Http\Controllers\PemilihController::class, 'checkdpt']);
 Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpemilih']);
 
+Route::get('calon', [App\Http\Controllers\CalonController::class, 'kenalicalon']);
+
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
+});
 
 Route::group(['prefix' => 'pengelola', 'middleware' => 'auth'], function() {
 
@@ -47,5 +54,13 @@ Route::group(['prefix' => 'pemilih'], function() {
     Route::get('delete/{id}', [App\Http\Controllers\PemilihController::class, 'delete']);
 });
 
+Route::group(['prefix' => 'calon-bem'], function() { 
+    Route::get('/', [App\Http\Controllers\CalonController::class, 'indexbem']);
+    Route::get('new', [App\Http\Controllers\CalonController::class, 'newbem']);
+    Route::post('new', [App\Http\Controllers\CalonController::class, 'storebem']); 
+    Route::get('edit/{id}', [App\Http\Controllers\CalonController::class, 'editbem']);
+    Route::post('edit', [App\Http\Controllers\CalonController::class, 'updatebem']);
+    Route::get('delete/{id}', [App\Http\Controllers\CalonController::class, 'deletebem']);
+});
 
 });

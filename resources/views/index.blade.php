@@ -15,7 +15,7 @@
                 <a id="freeconsultation" class="btn btn-lg btn-primary" href="/ux-design-process">Gunakan Hak Pilih</a>
               </div>
               <div class="col-lg-5 text-center">
-                <img src="assets/images/democracy.png"   class="img-fluid min-vw-50">
+                <img src="{{asset('assets/images/democracy.png')}}"   class="img-fluid min-vw-50">
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-6 order-md-last mb-4 mb-md-0">
-                <img src="assets/images/capim.png" class="img-fluid"></div>
+                <img src="{{asset('assets/images/capim.png')}}" class="img-fluid"></div>
                 <div class="col-md-6 d-flex align-items-center"><div>
                   <h2 class="display-4">Kenali Calon Pemimpinmu</h2
                     ><p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka !</p>
@@ -34,7 +34,7 @@
                     <h4 class="mb-3">Program Kerja & Rencana</h4>
                     <h4 class="mb-3">Informasi Kampanye</h4>
                     <h4 class="mb-3">Profil & CV</h4> 
-                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="/about-us">Kenali Calon</a>
+                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="{{url('calon'}}">Kenali Calon</a>
                       </div>
                     </div>
                   </div>
@@ -49,7 +49,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4">
-            <img src="assets/images/anywhere.png" class="col-md-11" alt="Industries"></div>
+            <img src="{{asset('assets/images/anywhere.png')}}" class="col-md-11" alt="Industries"></div>
             <div class="col-md-6 mb-4">
               <h2 class="h1 mb-4">Gunakan Hak Suara, Dimana Saja, Tanpa Repot !</h2>
               <ul class="list-unstyled"><li class="d-flex py-2">
@@ -89,12 +89,12 @@
     <div class="container align-items-center text-center text-md-left">
       <div class="row py-6 align-items-center">
         <div class="col-12 col-md-6 text-center pb-4 pb-md-0">
-          <img src="assets/images/future.png"></div>
+          <img src="{{asset('assets/images/future.png')}}"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
             <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu ! Hanya 5 menit !.</p>
-            <a href=" https://adamfard.com/download-ux-resources/launch-digital-product" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
+            <a href="{{url('calon')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>
       </div>

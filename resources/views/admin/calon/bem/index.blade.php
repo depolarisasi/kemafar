@@ -41,7 +41,7 @@
                                             <p>{{$a->calon_namawakil}} ({{$a->calon_npmwakil}})</p></td>  
                                                     <td>{{$a->calon_nourut}}</td>  
                                                     <td>
-                                                        <a href="{{url('pengelola/calon/bem/detail/'.$a->idcalonbem)}}" class="btn btn-sm btn-primary"><i class="uil-info-circle"></i></a> 
+                                                        <a href="{{url('pengelola/calon-bem/detail/'.$a->idcalonbem)}}" class="btn btn-sm btn-primary"><i class="uil-info-circle"></i></a> 
                                                         <a href="{{url('pengelola/calon-bem/edit/'.$a->idcalonbem)}}" class="btn btn-sm btn-warning"><i class="uil-edit"></i></a>
                                                         <button type="button" href="{{url('pengelola/calon-bem/delete/'.$a->idcalonbem)}}" class="deletebtn btn btn-sm btn-danger"><i class="uil-trash"></i></button></td>
                                                 </tr>

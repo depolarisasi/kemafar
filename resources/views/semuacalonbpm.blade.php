@@ -16,29 +16,7 @@
                 </div>
 
             
-              </div>
-              <div class="row mt-3"> 
-                <div class="col-12 text-center mb-3">
-                  
-                <h2 class="text-center">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
-                </div>
-                
-                @foreach($bem as $b)
-                <div class="col-md-6 col-lg-6 col-sm-12">
-                <div class="card border">
-                  <img src="{{asset($b->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
-                  <div class="card-body p-3">
-                    <h3 class="card-title mb-2">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3>
-                    <p class="card-text"><b>{{$b->calon_slogan}}</b>
-                      <br><b>{{$b->calon_namaketua}}</b> ({{$b->calon_npmketua}}) & <b>{{$b->calon_namawakil}}</b> ({{$b->calon_npmwakil}})  </p>
-                  </div> 
-                  <div class="card-footer p-3">
-                    <a href="{{url('calon/bem/'.$b->calon_nourut)}}" class="btn btn-md btn-primary">Lihat Profil, Visi Misi & Program Kerja</a> 
-                  </div>
-                </div>
-              </div>
-                @endforeach
-              </div>
+              </div> 
                
               <div class="row mt-3"> 
                 <div class="col-12 text-center mb-3">

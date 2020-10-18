@@ -24,6 +24,13 @@ Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpe
 
 Route::get('calon', [App\Http\Controllers\CalonController::class, 'kenalicalon']);
 
+
+Route::get('calon/bem/', [App\Http\Controllers\CalonController::class, 'semuacalonbem']);
+Route::get('calon/bpm/', [App\Http\Controllers\CalonController::class, 'semuacalonbpm']);
+
+Route::get('calon/bem/{id}', [App\Http\Controllers\CalonController::class, 'profilpasanganbem']);
+Route::get('calon/bpm/{id}', [App\Http\Controllers\CalonController::class, 'profilcalonbpm']);
+
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
@@ -61,6 +68,16 @@ Route::group(['prefix' => 'calon-bem'], function() {
     Route::get('edit/{id}', [App\Http\Controllers\CalonController::class, 'editbem']);
     Route::post('edit', [App\Http\Controllers\CalonController::class, 'updatebem']);
     Route::get('delete/{id}', [App\Http\Controllers\CalonController::class, 'deletebem']);
+});
+
+
+Route::group(['prefix' => 'calon-bpm'], function() { 
+    Route::get('/', [App\Http\Controllers\CalonController::class, 'indexbpm']);
+    Route::get('new', [App\Http\Controllers\CalonController::class, 'newbpm']);
+    Route::post('new', [App\Http\Controllers\CalonController::class, 'storebpm']); 
+    Route::get('edit/{id}', [App\Http\Controllers\CalonController::class, 'editbpm']);
+    Route::post('edit', [App\Http\Controllers\CalonController::class, 'updatebpm']);
+    Route::get('delete/{id}', [App\Http\Controllers\CalonController::class, 'deletebpm']);
 });
 
 });

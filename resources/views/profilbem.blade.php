@@ -1,65 +1,31 @@
 @extends('layouts.main')
-@section('title','Cek Pemilih - ')
+@section('title','Profil Pasangan Calon'.$detail->calon_namapasangan.' - ')
 @section('content')
-
-<section class="py-5 ">
+<section class="o-hidden py-5 ">
             <div class="container">
-          <div class="row align-items-center min-vh-40 mt-5">
-            <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4">Kenali
-                <span class="text-primary-2">Calon</span> 
-                Pemimpinmu</h1>
-                <div class="my-4">
-                  <p class="lead">Kenali lebih dekat, siapa mereka, apa visi dan misi mereka dan apa yang akan mereka rencanakan untuk kampusmu !</p>
-                   
-              
-                </div>
+          <div class="row align-items-center flex-column-reverse flex-md-row min-vh-40 mt-5">
+            <div class="col-lg-7 text-center text-lg-left mb-4 mt-2 mb-lg-0">
+              <h1 class="display-4">{{$detail->calon_namapasangan}}</h1>
+              <p class="lead">{{$detail->calon_slogan}}</p>  
+                <div class="my-4"> 
+                  <p class="lead"><b>{{$detail->calon_namaketua}} & {{$detail->calon_namawakil}}</b></p>  
+                  <p class="lead"> <span class="badge badge-primary">Angkatan {{$detail->angkatan_tahun}}</span>  <span class="badge badge-secondary">Nomor Urut {{$detail->calon_nourut}}</span></p>
+                </div> 
+              </div>
+              <div class="col-lg-5 text-center">
+                <img src="{{asset($detail->calon_pasfoto)}}" class="img-fluid">
+              </div>
+            </div>
 
-            
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <h2>Biografi Pasangan</h2>
+                {!! $detail->calon_biografi !!}
               </div>
-              <div class="row mt-3"> 
-                <div class="col-12 text-center mb-3">
-                  
-                <h2 class="text-center">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
-                </div>
-                
-                @foreach($bem as $b)
-                <div class="col-md-6 col-lg-6 col-sm-12">
-                <div class="card border">
-                  <img src="{{asset($b->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
-                  <div class="card-body p-3">
-                    <h3 class="card-title mb-2">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3>
-                    <p class="card-text"><b>{{$b->calon_slogan}}</b>
-                      <br><b>{{$b->calon_namaketua}}</b> ({{$b->calon_npmketua}}) & <b>{{$b->calon_namawakil}}</b> ({{$b->calon_npmwakil}})  </p>
-                  </div> 
-                  <div class="card-footer p-3">
-                    <a href="{{url('calon/bem/'.$b->calon_nourut)}}" class="btn btn-md btn-primary">Lihat Profil, Visi Misi & Program Kerja</a> 
-                  </div>
-                </div>
-              </div>
-                @endforeach
-              </div>
-               
-              <div class="row mt-3"> 
-                <div class="col-12 text-center mb-3">
-                  
-                <h2 class="text-center"> Calon Anggota BPM</h2>
-                </div>
-                
-                @foreach($bpm as $p)
-                <div class="col-md-4 col-lg-4 col-sm-6">
-                <div class="card border">
-                  <img src="{{asset($p->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
-                  <div class="card-body p-3">
-                    <h5 class="card-title mb-2">{{$p->calon_namacalon}}</h5>
-                    <p class="card-text"><b> NO URUT {{$p->calon_nourut}}</b><br><span class="badge badge-info">Angkatan {{$p->angkatan_tahun}}</span></p>
-                  </div> 
-                  <div class="card-footer p-3">
-                    <a href="{{url('calon/bpm/'.$p->idcalonbpm)}}" class="btn btn-md btn-primary">Lihat Profil & Visi, Misi </a> 
-                  </div>
-                </div>
-              </div>
-                @endforeach
+
+              <div class="col-md-12 mt-5">
+                <h2>Visi, Misi & Program Kerja Pasangan</h2>
+                {!! $detail->calon_prokervisimisi !!}
               </div>
             </div>
           </div>
@@ -78,7 +44,7 @@
     <div class="container align-items-center text-center text-md-left">
       <div class="row py-6 align-items-center">
         <div class="col-12 col-md-6 text-center pb-4 pb-md-0">
-          <img src="assets/images/future.png"></div>
+          <img src="{{asset('assets/images/future.png')}}"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>

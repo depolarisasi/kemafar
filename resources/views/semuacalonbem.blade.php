@@ -39,28 +39,7 @@
               </div>
                 @endforeach
               </div>
-               
-              <div class="row mt-3"> 
-                <div class="col-12 text-center mb-3">
-                  
-                <h2 class="text-center"> Calon Anggota BPM</h2>
-                </div>
-                
-                @foreach($bpm as $p)
-                <div class="col-md-4 col-lg-4 col-sm-6">
-                <div class="card border">
-                  <img src="{{asset($p->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
-                  <div class="card-body p-3">
-                    <h5 class="card-title mb-2">{{$p->calon_namacalon}}</h5>
-                    <p class="card-text"><b> NO URUT {{$p->calon_nourut}}</b><br><span class="badge badge-info">Angkatan {{$p->angkatan_tahun}}</span></p>
-                  </div> 
-                  <div class="card-footer p-3">
-                    <a href="{{url('calon/bpm/'.$p->idcalonbpm)}}" class="btn btn-md btn-primary">Lihat Profil & Visi, Misi </a> 
-                  </div>
-                </div>
-              </div>
-                @endforeach
-              </div>
+             
             </div>
           </div>
         </section>

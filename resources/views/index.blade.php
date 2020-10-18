@@ -12,7 +12,7 @@
                 <div class="my-4">
                   <p class="lead">Jarak bukan menjadi halangan untuk gunakan hak pilihmu.</p>
                 </div>
-                <a id="freeconsultation" class="btn btn-lg btn-primary" href="/ux-design-process">Gunakan Hak Pilih</a>
+                <a class="btn btn-lg btn-primary" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
               </div>
               <div class="col-lg-5 text-center">
                 <img src="{{asset('assets/images/democracy.png')}}"   class="img-fluid min-vw-50">
@@ -73,7 +73,7 @@
                    Pilihanmu terenkripsi, tidak perlu login selama kamu terdaftar sebagai hak pilih</span>
                   </li>
                 </ul>
-                <a class="lead mt-2 mb-2 mb-md-0 ml-4 ml-sm-4 hover-arrow" href="/contact-us">Cek Daftar Pemilih Tetap</a>
+                <a class="lead mt-2 mb-2 mb-md-0 ml-4 ml-sm-4 hover-arrow" href="{{url('cek-pemilih')}}">Cek Daftar Pemilih Tetap</a>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
             <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu ! Hanya 5 menit !.</p>
-            <a href="{{url('calon')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
+            <a href="{{url('pilih')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>
       </div>

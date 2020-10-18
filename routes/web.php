@@ -36,6 +36,8 @@ Route::get('calon/bpm/{id}', [App\Http\Controllers\CalonController::class, 'prof
 Route::get('pilih', [App\Http\Controllers\SuaraController::class, 'pilihauthenticate']);
 Route::post('pilih', [App\Http\Controllers\SuaraController::class, 'authenticateuser']);
 Route::get('pilih/calon', [App\Http\Controllers\SuaraController::class, 'pilihauthenticated']);
+Route::post('pilih/calon', [App\Http\Controllers\SuaraController::class, 'storepilihan']);
+Route::get('thankyou', [App\Http\Controllers\SuaraController::class, 'thankyou']);
 
 Route::group(['middleware' => 'auth'], function() {
 

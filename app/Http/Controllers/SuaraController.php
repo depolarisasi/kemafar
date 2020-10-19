@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Suara;
 use App\Models\CalonBem;
-use App\Models\CalonBPm;
+use App\Models\CalonBPM;
 use App\Models\Pemilih;
 use Carbon\Carbon;
 use App\Models\Angkatan; 

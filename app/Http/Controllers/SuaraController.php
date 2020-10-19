@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Suara;
 use App\Models\CalonBem;
-use App\Models\CalonBpm;
+use App\Models\CalonBPm;
 use App\Models\Pemilih;
 use Carbon\Carbon;
 use App\Models\Angkatan; 
@@ -14,10 +14,41 @@ use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Database\QueryException as QE; 
 use Cookie;
+use DB;
 use Illuminate\Http\Response;
 
 class SuaraController extends Controller
 {
+
+    public function index(){
+        $bpm = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
+        ->groupBy('suara_calidbem')
+        ->pluck('total','suara_calidbem')->all();
+
+        $arr = array();
+        foreach($bpm as $b){
+            array_push($arr, $b);
+        } 
+
+        $calon_bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.angkatan_tahun')->get();
+
+        for($i=0;$i<count($calon_bpm);$i++){
+            $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
+            $calon_bpm[$i]["suara"] =  $suaracalon;
+        }
+
+        $suara = Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
+        ->join('calonbem','suara.suara_calidbem','=','calonbem.idcalonbem')
+        ->join('calonbpm','suara.suara_calidbpm','=','calonbpm.idcalonbpm')
+        ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
+        ->select('pemilih.pemilih_secretcode','angkatan.angkatan_nama','angkatan.angkatan_tahun','suara.*','calonbem.*','calonbpm.*')->get();
+        return view('admin.suara.index')->with(compact('suara','arr','calon_bpm'));
+       //return $suarabpm;
+       //return $calon_bpm;
+    }
+
+
     public function pilihauthenticate(Request $request){
         
         $cookies = $request->cookie('secret');
@@ -35,7 +66,7 @@ class SuaraController extends Controller
         $cookies = $request->cookie('sudahisi');
         if($pemilih && is_null($pemilih->pemilih_pilihan) && count($suara) == 0 && empty($cookies)){
 
-            return redirect('pilih/calon')->withCookie(cookie('secret', $request->secretcode, 360));
+            return redirect('pilih/calon')->withCookie(cookie('secret', $request->secretcode, 180));
         }
         alert('Error','Secret Key Salah atau Sudah Terpakai', 'error');
         return redirect()->back();
@@ -89,7 +120,7 @@ class SuaraController extends Controller
         }
         
         $cookie = Cookie::forget('secret');
-            return redirect('thankyou')->withCookie(cookie('sudahisi', 'sudah isi', 720))->withCookie($cookie);
+            return redirect('thankyou')->withCookie(cookie('sudahisi', 'sudah isi', 160))->withCookie($cookie);
       
     }
 

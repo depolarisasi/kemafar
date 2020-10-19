@@ -92,4 +92,11 @@ Route::group(['prefix' => 'setting'], function() {
     Route::get('/', [App\Http\Controllers\SettingController::class, 'setting']);
     Route::post('update', [App\Http\Controllers\SettingController::class, 'updatesetting']); 
 });
+
+
+Route::group(['prefix' => 'suara'], function() { 
+    Route::get('/', [App\Http\Controllers\SuaraController::class, 'index']);
+    Route::post('update', [App\Http\Controllers\SuaraController::class, 'updatesetting']); 
+});
+
 });

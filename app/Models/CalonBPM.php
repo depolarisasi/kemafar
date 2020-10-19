@@ -42,5 +42,10 @@ class CalonBPM extends Model
         'calon_pasfoto',  
         'created_at',
         'updated_at', ];
- 
+
+
+        public function pemilih()
+        {
+            return $this->hasMany('App\Models\Blog_Post', 'category_id');
+        }
 }

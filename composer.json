@@ -10,7 +10,7 @@
     "require": {
         "php": "^7.3",
         "chartisan/php": "^1.2",
-        "consoletvs/charts": "7.*",
+        "consoletvs/charts": "^7.1",
         "doctrine/dbal": "^2.11",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",

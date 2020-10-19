@@ -88,4 +88,8 @@ Route::group(['prefix' => 'calon-bpm'], function() {
     Route::get('delete/{id}', [App\Http\Controllers\CalonController::class, 'deletebpm']);
 });
 
+Route::group(['prefix' => 'setting'], function() { 
+    Route::get('/', [App\Http\Controllers\SettingController::class, 'setting']);
+    Route::post('update', [App\Http\Controllers\SettingController::class, 'updatesetting']); 
+});
 });

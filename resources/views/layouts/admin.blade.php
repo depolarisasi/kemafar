@@ -26,7 +26,7 @@
                     <!-- LOGO -->
                     <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="a{{asset('adminasset/images/logo.png')}}" alt="" height="24" />
+                            <img src="{{asset('adminasset/images/logo.png')}}" alt="" height="24" />
                             <span class="d-inline h5 ml-1 text-logo">KPUM</span>
                         </span>
                         <span class="logo-sm">
@@ -47,7 +47,7 @@
                          
 
                         <li class="dropdown notification-list" data-toggle="tooltip" data-placement="left" title="Settings">
-                            <a href="javascript:void(0);" class="nav-link right-bar-toggle">
+                            <a href="{{url('pengelola/setting')}}" class="nav-link right-bar-toggle">
                                 <i data-feather="settings"></i>
                             </a>
                         </li>
@@ -226,14 +226,10 @@
         <script src="{{asset('adminasset/js/vendor.min.js')}}"></script>
 
         <!-- optional plugins -->
-        <script src="{{asset('adminasset/libs/moment/moment.min.js')}}"></script>
-        <script src="{{asset('adminasset/libs/apexcharts/apexcharts.min.js')}}"></script>
-        <script src="{{asset('adminasset/libs/flatpickr/flatpickr.min.js')}}"></script>
+        <script src="{{asset('adminasset/libs/moment/moment.min.js')}}"></script>  
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.7/dist/sweetalert2.all.min.js"></script>
-
-        <!-- page js -->
-        <script src="{{asset('adminasset/js/pages/dashboard.init.js')}}"></script>
-
+        <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="https://unpkg.com/@chartisan/chartjs@^2.1.0/dist/chartisan_chartjs.umd.js"></script>
         <!-- App js -->
         <script src="{{asset('adminasset/js/app.min.js')}}"></script>
 

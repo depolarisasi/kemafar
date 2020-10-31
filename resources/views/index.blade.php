@@ -55,7 +55,7 @@
   }
 
   @keyframes style3 {
-    0% {right: 200px;}
+    0% {right: 100px;}
     100% {right: 0px;}
   }
   

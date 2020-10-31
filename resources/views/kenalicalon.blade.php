@@ -95,7 +95,7 @@
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
-            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu ! Hanya 5 menit !.</p>
+            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu! Hanya 5 menit!.</p>
             <a href=" https://adamfard.com/download-ux-resources/launch-digital-product" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>

@@ -93,7 +93,7 @@
                 <img src="{{asset('assets/images/capim.png')}}" class="img-fluid" id="style2"></div>
                 <div class="col-md-6 d-flex align-items-center"><div>
                   <h2 class="display-4">Kenali Calon Pemimpinmu</h2
-                    ><p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka !</p>
+                    ><p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka!</p>
                     <h4 class="mb-3">Visi & Misi</h4>
                     <h4 class="mb-3">Program Kerja & Rencana</h4>
                     <h4 class="mb-3">Informasi Kampanye</h4>
@@ -115,24 +115,24 @@
           <div class="col-md-6 mb-4">
             <img src="{{asset('assets/images/anywhere.png')}}" class="col-md-11" id="style3"></div>
             <div class="col-md-6 mb-4">
-              <h2 class="h1 mb-4">Gunakan Hak Suara, Dimana Saja, Tanpa Repot !</h2>
+              <h2 class="h1 mb-4">Gunakan Hak Suara, Dimana Saja, Tanpa Repot!</h2>
               <ul class="list-unstyled"><li class="d-flex py-2">
                 <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                 </div>
-                <span class="lead mt-n1"><strong>All Browser Support</strong> Laptop? PC? Smartphone? Chrome? Firefox? Safari? semua bisa !</span>
+                <span class="lead mt-n1"><strong>All Browser Support</strong> Laptop? PC? Smartphone? Chrome? Firefox? Safari? Semua bisa!</span>
                 </li>
                 <li class="d-flex py-2">
                   <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                 </div>
                 <span class="lead mt-n1"><strong>24/7 Access</strong> 
-                 Gunakan hak suaramu jam 3 pagi ? setelah kelas sore? atau sambil diskusi dengan teman di Google Meet ? bisa ! </span></li>
+                 Gunakan hak suaramu jam 3 pagi? Setelah kelas sore? Atau sambil diskusi dengan teman di Google Meet ? Bisa! </span></li>
                   <li class="d-flex py-2">
                     <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2"><svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                   </div>
                   <span class="lead mt-n1">
-                    <strong>Privacy Protected, Your Data is Safe !</strong> 
+                    <strong>Privacy Protected, Your Data is Safe!</strong> 
                    Pilihanmu terenkripsi, tidak perlu login selama kamu terdaftar sebagai hak pilih</span>
                   </li>
                 </ul>
@@ -154,9 +154,9 @@
         <div class="col-12 col-md-6 text-center pb-4 pb-md-0">
           <img src="{{asset('assets/images/future.png')}}" id="style4"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
-            <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
+            <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
-            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu ! Hanya 5 menit !.</p>
+            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu! Hanya 5 menit!.</p>
             <a href="{{url('pilih')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>

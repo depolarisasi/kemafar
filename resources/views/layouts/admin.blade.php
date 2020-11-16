@@ -65,31 +65,11 @@
                                     </div>
                                     <span data-feather="chevron-down" class="ml-2 align-self-center"></span>
                                 </div>
-                            </a>
-                            <div class="dropdown-menu profile-dropdown-items dropdown-menu-right">
-                                <a href="pages-profile.html" class="dropdown-item notify-item">
-                                    <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
-                                    <span>My Account</span>
-                                </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i data-feather="settings" class="icon-dual icon-xs mr-2"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i data-feather="help-circle" class="icon-dual icon-xs mr-2"></i>
-                                    <span>Support</span>
-                                </a>
-
-                                <a href="pages-lock-screen.html" class="dropdown-item notify-item">
-                                    <i data-feather="lock" class="icon-dual icon-xs mr-2"></i>
-                                    <span>Lock Screen</span>
-                                </a>
+                            </a> 
 
                                 <div class="dropdown-divider"></div>
 
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="{{url('/logout')}}" class="dropdown-item notify-item">
                                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
                                     <span>Logout</span>
                                 </a>
@@ -109,20 +89,14 @@
 
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">{{Auth::user()->name}}</h6>
-                        <span class="pro-user-desc">Administrator</span>
+                        <span class="pro-user-desc">Panitia KPUM</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                             aria-expanded="false">
                             <span data-feather="chevron-down"></span>
                         </a>
-                        <div class="dropdown-menu profile-dropdown">
-                            <a href="#" class="dropdown-item notify-item">
-                                <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
-                                <span>My Account</span>
-                            </a> 
-  
-                            <div class="dropdown-divider"></div>
+                        <div class="dropdown-menu profile-dropdown"> 
 
                             <a href="{{url('logout')}}" class="dropdown-item notify-item">
                                 <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
@@ -134,16 +108,14 @@
                 <div class="sidebar-content">
                     <!--- Sidemenu -->
                     <div id="sidebar-menu" class="slimscroll-menu">
-                        <ul class="metismenu" id="menu-bar">
-                            <li class="menu-title">Navigation</li>
+                        <ul class="metismenu" id="menu-bar"> 
 
                             <li>
                                 <a href="{{url('/pengelola')}}">
                                     <i data-feather="home"></i> 
                                     <span> Dashboard </span>
                                 </a>
-                            </li>
-                            <li class="menu-title">Platform</li>
+                            </li> 
                             <li>
                                 <a href="{{url('pengelola/pemilih')}}">
                                     <i data-feather="calendar"></i>
@@ -169,24 +141,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="{{url('pengelola/suara')}}">
                                     <i data-feather="inbox"></i>
                                     <span> Hasil Suara </span>
-                                    <span class="menu-arrow"></span>
                                 </a>
-
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="email-inbox.html">Inbox</a>
-                                    </li>
-                                    <li>
-                                        <a href="email-read.html">Read</a>
-                                    </li>
-                                    <li>
-                                        <a href="email-compose.html">Compose</a>
-                                    </li>
-                                </ul>
-                            </li> 
+                            </li>
                               
                         </ul>
                     </div>
@@ -219,12 +178,9 @@
 
 
         </div>
-        <!-- END wrapper -->
- 
-
+        <!-- END wrapper --> 
         <!-- Vendor js -->
-        <script src="{{asset('adminasset/js/vendor.min.js')}}"></script>
-
+        <script src="{{asset('adminasset/js/vendor.min.js')}}"></script> 
         <!-- optional plugins -->
         <script src="{{asset('adminasset/libs/moment/moment.min.js')}}"></script>  
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.7/dist/sweetalert2.all.min.js"></script>

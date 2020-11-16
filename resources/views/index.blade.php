@@ -20,7 +20,7 @@
         </section>
 
 
-        <section class="pt-0 pt-md-5 pt-xl-7" style="background-color: #E9CCCE">
+        <section class="pt-0 pt-md-5 pt-xl-7" style="background-color: #F4E5E6;">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-6 order-md-last mb-4 mb-md-0">

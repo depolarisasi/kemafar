@@ -8,6 +8,8 @@ use App\Models\Angkatan;
 use App\Imports\PemilihImport; 
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Mail\UndanganMemilih;
+use Illuminate\Support\Facades\Mail;
 
 class PemilihController extends Controller
 {
@@ -28,12 +30,19 @@ class PemilihController extends Controller
         $store->put('pemilih_secretcode',$secret);
         $checkpemilih = Pemilih::where('pemilih_npm',$request->pemilih_npm)
         ->orWhere('pemilih_email',$request->pemilih_email)->first();
+        $emailuser = $request->pemilih_email;
+        $nama = $request->pemilih_nama;
         if($checkpemilih){
             alert('Error','Pemilih sudah ada !', 'error');
             return redirect()->back();
         }else {
         try {
         Pemilih::create($store->all());
+        Mail::send('mail.undangan', ['kodeunik' => $secret, 'nama' => $nama], function ($message) use ($emailuser){
+            $message->from('panitia@pemilufhunpad.com', 'Panitia KPUM 2020');
+            $message->to($emailuser); 
+            $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif KMFH');
+         });
         } catch (QE $e) { 
             alert('Error','Database Error', 'error');
             return redirect()->back();

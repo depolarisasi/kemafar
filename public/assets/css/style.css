@@ -10173,7 +10173,7 @@ svg.bg-white * {
 svg.bg-primary * {
  fill: #95000d;}
 svg.bg-primary-alt * {
- fill:#f2f6fd
+ fill:#F4E5E6
 }
 svg.bg-secondary * {
  fill:#6c757d
@@ -10555,7 +10555,7 @@ section {
  box-shadow:.5rem .5rem 0 rgba(233,236,239,.5)
 }
 .bg-primary-alt {
- background:#f2f6fd
+ background:#F4E5E6
 }
 .bg-primary-2-alt {
  background:#fff9f1
@@ -13911,7 +13911,7 @@ body.fade-page {
  }
 }
 .article-template-page .article-blog blockquote {
- background:#f2f6fd
+ background:#F4E5E6
 }
 .article-template-page .article-blog .inline-cta {
  background-color: #95000d;
@@ -15037,7 +15037,7 @@ body.fade-page {
  }
 }
 .project-template-page .article-project blockquote {
- background:#f2f6fd
+ background:#F4E5E6
 }
 .featured-stories {
  margin-top:-20rem
@@ -15078,7 +15078,7 @@ body.fade-page {
 @media (max-width:769px) {
  .featured-section,
  .related-stories {
-  background:#f2f6fd
+  background:#F4E5E6
  }
 }
 /*!

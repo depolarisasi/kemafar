@@ -55,8 +55,7 @@
                                     @if(!empty($suara))
                                         <table id="basic-datatable"  class="table table-striped dt-responsive table-bordered nowrap" style="width:100%">
                                             <thead>
-                                                <tr> 
-                                                    <th>ID Pemilih</th>
+                                                <tr>  
                                                     <th>Pilihan BEM</th> 
                                                     <th>Pilihan BPM</th>  
                                                     <th>Angkatan</th>
@@ -67,8 +66,7 @@
                                             <tbody>
 
                                                 @foreach($suara as $a)
-                                                <tr>
-                                                    <td>{{$a->suara_idpemilih}}</td>
+                                                <tr> 
                                                     <td><span class="badge badge-success">{{$a->calon_namapasangan}}</span></td> 
                                                     <td><span class="badge badge-info">{{$a->calon_namacalon}}</span></td>
                                                     <td>{{$a->angkatan_nama}} / {{$a->angkatan_tahun}}</td>  

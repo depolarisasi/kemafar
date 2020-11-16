@@ -14,7 +14,20 @@
                    
               
                 </div>
+<style>
+  #style4 {
+    animation-name: style4;
+    position: relative;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
 
+  @keyframes style4 {
+    0% {right: 200px;}
+    100% {right: 0px;}
+  }
+
+</style>
             
               </div>
               <div class="row mt-3"> 
@@ -78,11 +91,11 @@
     <div class="container align-items-center text-center text-md-left">
       <div class="row py-6 align-items-center">
         <div class="col-12 col-md-6 text-center pb-4 pb-md-0">
-          <img src="assets/images/future.png"></div>
+          <img src="assets/images/future.png" id="style4"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
             <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
-            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu ! Hanya 5 menit !.</p>
+            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu! Hanya 5 menit!.</p>
             <a href=" https://adamfard.com/download-ux-resources/launch-digital-product" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>

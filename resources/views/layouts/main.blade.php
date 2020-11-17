@@ -8,12 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Suara Mahasiswa - Aplikasi Pemilu Online Kampus">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}"> <!-- Resource style -->
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/jquery.accordion.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="{{asset('assets/css/jquery.accordion.css')}}"> 
     <link href="{{asset('assets/css/all.css')}}" rel="stylesheet"> <!--load all styles -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     @yield('css')

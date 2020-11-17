@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Suara Mahasiswa'),
+    'name' => env('APP_NAME', 'KPUM FH UNPAD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://pemilufhunpad.com'),
 
     'asset_url' => env('ASSET_URL', null),
 

@@ -14,7 +14,7 @@
                             <div class="col-md-6">
                               <div class="card">
                                 <div class="card-body p-3"> 
-                                <h4 class="header-title mt-0 mb-1">Tabulasi Suara BPM</h4>
+                                <h4 class="header-title mt-0 mb-1">Tabulasi Suara BEM</h4>
                                 <div id="apex-pie-1" class="apex-charts" dir="ltr"></div>
                             </div>
                                         </div> 

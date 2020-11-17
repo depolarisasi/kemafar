@@ -24,22 +24,29 @@ class PemilihImport implements ToCollection, WithHeadingRow
         $secret = mt_rand(1,1000).mt_rand(1,100).mt_rand(1,5).mt_rand(1,9).mt_rand(1,7); 
         $emailuser = $row['email'];
         $nama = $row['nama'];
-                $insert = new Pemilih();
-                $insert->insertOrIgnore([
-                    'pemilih_npm'                               => $row['npm'],
-                    'pemilih_nama'                 => $row['nama'],
-                    'pemilih_email'                  => $row['email'],
-                    'pemilih_angkatan'                  => $row['angkatan'],
-                    'pemilih_pilihan'                   => null,
-                    'pemilih_secretcode'              => $secret, 
+        $checkpemilih = Pemilih::where('pemilih_npm',$row['npm'])
+        ->orWhere('pemilih_email',$row['email'])->first();
+        
+        if(empty($checkpemilih)){
+            $insert = new Pemilih();
+            $insert->insertOrIgnore([
+                'pemilih_npm'                               => $row['npm'],
+                'pemilih_nama'                 => $row['nama'],
+                'pemilih_email'                  => $row['email'],
+                'pemilih_angkatan'                  => $row['angkatan'],
+                'pemilih_pilihan'                   => null,
+                'pemilih_secretcode'              => $secret, 
 
-                ]); 
+            ]); 
 
-                Mail::send('mail.undangan', ['kodeunik' => $secret, 'nama' => $nama], function ($message) use ($emailuser){
-                    $message->from('panitia@pemilufhunpad.com', 'Panitia KPUM 2020');
-                    $message->to($emailuser); 
-                    $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif KMFH');
-                 });
+            Mail::send('mail.undangan', ['kodeunik' => $secret, 'nama' => $nama], function ($message) use ($emailuser){
+                $message->from('panitia@pemilufhunpad.com', 'Panitia KPUM 2020');
+                $message->to($emailuser); 
+                $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif KMFH');
+             });
+        } 
+
+             
  
             }
 

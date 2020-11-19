@@ -2,32 +2,98 @@
 @content('title','')
 @section('content')
 
-<section class="o-hidden mt-5 py-5 ">
+<style>
+#style1 {
+    animation-name: style1;
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+#style2 {
+  animation-name: style2;
+  position: relative;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#style3 {
+  animation-name: style3;
+  position: relative;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#style4 {
+  animation-name: style4;
+  position: relative;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+  @keyframes style1 {
+    from {
+      margin-left: 100px;
+    }
+
+    to {
+      margin-left: 0px;
+    }
+  }
+
+  @keyframes style2 {
+    from {
+      margin-left: 300px;
+    }
+
+    to {
+      margin-left: 0px;
+    }
+  }
+
+  @keyframes style3 {
+    0% {right: 100px;}
+    100% {right: 0px;}
+  }
+  
+  @keyframes style4 {
+    0% {right: 200px;}
+    100% {right: 0px;}
+  }
+</style>
+
+<section class="o-hidden py-5 ">
+
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
-            <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4 text-center">Suarakan
-                <span class="text-primary-2 ">Hak</span> 
+            <div class="col-lg-7 text-center text-lg-left mb-4 mb-lg-0">
+              <h1 class="display-4">Suarakan
+                <span class="text-primary-2">Hak</span> 
                 Pilihmu</h1>
-                <div class="my-4 text-center">
+                <div class="my-4">
                   <p class="lead">Jarak bukan menjadi halangan untuk gunakan hak pilihmu.</p>
                 </div>
-                <center><a class="btn btn-lg btn-primary text-center" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
-                </div>
-              </div> 
+                <a class="btn btn-lg btn-primary" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
+              </div>
+              <div class="col-lg-5 text-center">
+                <img src="{{asset('assets/images/democracy.png')}}" class="img-fluid min-vw-50" id="style1">
+              </div>
             </div>
           </div>
         </section>
 
 
-        <section class="pt-0 pt-md-5 pt-xl-7" style="background-color: #F4E5E6;">
+        <section class="bg-primary-alt pt-0 pt-md-5 pt-xl-7">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-6 order-md-last mb-4 mb-md-0">
                 <img src="{{asset('assets/images/capim.png')}}" class="img-fluid" id="style2"></div>
                 <div class="col-md-6 d-flex align-items-center"><div>
-                  <h2 class="display-4">Kenali Calon Pemimpinmu</h2>
-                  <p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka !</p>
+                  <h2 class="display-4">Kenali Calon Pemimpinmu</h2
+                    ><p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka!</p>
                     <h4 class="mb-3">Visi & Misi</h4>
                     <h4 class="mb-3">Program Kerja & Rencana</h4>
                     <h4 class="mb-3">Informasi Kampanye</h4>
@@ -76,7 +142,7 @@
           </div>
         </section>
       
-<section class="text-light py-2 py-md-1 o-hidden" style="background-color: #95000d;">
+<section class="bg-primary text-light py-2 py-md-1 o-hidden">
   <div class="decoration-wrapper d-none d-lg-block">
     <div class="decoration scale-1" style="top:-30px;left:2%;transform:rotate(-74.43deg)">
       <svg class="bg-yellow" width="156" height="159" viewBox="0 0 156 159" fill="none">

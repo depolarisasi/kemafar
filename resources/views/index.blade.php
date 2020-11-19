@@ -1,70 +1,7 @@
 @extends('layouts.main')
 @content('title','')
 @section('content')
-
-<style>
-#style1 {
-    animation-name: style1;
-    position: relative;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-
-#style2 {
-  animation-name: style2;
-  position: relative;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#style3 {
-  animation-name: style3;
-  position: relative;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#style4 {
-  animation-name: style4;
-  position: relative;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-}
-
-  @keyframes style1 {
-    from {
-      margin-left: 100px;
-    }
-
-    to {
-      margin-left: 0px;
-    }
-  }
-
-  @keyframes style2 {
-    from {
-      margin-left: 300px;
-    }
-
-    to {
-      margin-left: 0px;
-    }
-  }
-
-  @keyframes style3 {
-    0% {right: 100px;}
-    100% {right: 0px;}
-  }
   
-  @keyframes style4 {
-    0% {right: 200px;}
-    100% {right: 0px;}
-  }
-</style>
-
 <section class="o-hidden py-5 ">
 
             <div class="container">

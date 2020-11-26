@@ -40,9 +40,9 @@ class PemilihImport implements ToCollection, WithHeadingRow
             ]); 
 
             Mail::send('mail.undangan', ['kodeunik' => $secret, 'nama' => $nama], function ($message) use ($emailuser){
-                $message->from('panitia@pemilufhunpad.com', 'Panitia KPUM 2020');
+                $message->from('panitia@kpukemafar.com', 'Panitia KPU KEMAFAR 2020');
                 $message->to($emailuser); 
-                $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif KMFH');
+                $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif Kemafar');
              });
         } 
 

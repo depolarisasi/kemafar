@@ -2,43 +2,82 @@
 @content('title','')
 @section('content')
   
-<section class="o-hidden py-5 ">
+<section class="bg-primary-alt o-hidden py-5 ">
 
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-7 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4">Suarakan
-                <span class="text-primary-2">Hak</span> 
-                Pilihmu</h1>
+            <p class="text-white  lead">Selamat Datang Kemafar.</p>
+              <h1 class="text-white display-4">Kemafar
+                <span class="text-primary-2">Memilih</span></h1>
                 <div class="my-4">
-                  <p class="lead">Jarak bukan menjadi halangan untuk gunakan hak pilihmu.</p>
+                  <p class="text-white  lead">Corona bukan alasan untuk tidak menggunakan hak
+pilihmu.</p>
                 </div>
-                <a class="btn btn-lg btn-primary" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
+                <a class="text-white btn btn-lg btn-primary" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
               </div>
               <div class="col-lg-5 text-center">
-                <img src="{{asset('assets/images/democracy.png')}}" class="img-fluid min-vw-50" id="style1">
+<img src="{{asset('assets/images/democracy.png')}}" class="img-fluid" id="style1">
               </div>
             </div>
           </div>
         </section>
 
 
-        <section class="bg-primary-alt pt-0 pt-md-5 pt-xl-7">
+        <section class="pt-0 pt-md-5 pt-xl-7">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-md-6 order-md-last mb-4 mb-md-0">
-                <img src="{{asset('assets/images/capim.png')}}" class="img-fluid" id="style2"></div>
-                <div class="col-md-6 d-flex align-items-center"><div>
-                  <h2 class="display-4">Kenali Calon Pemimpinmu</h2
-                    ><p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka!</p>
-                    <h4 class="mb-3">Visi & Misi</h4>
-                    <h4 class="mb-3">Program Kerja & Rencana</h4>
-                    <h4 class="mb-3">Informasi Kampanye</h4>
-                    <h4 class="mb-3">Profil & CV</h4> 
-                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="{{url('calon')}}">Kenali Calon</a>
-                      </div>
+              <div class="col-md-12 d-flex align-items-center">
+                <div>
+                  <h2 class="display-4">Kenalan Yuk !</h2> 
                     </div>
                   </div>
+              <div class="col-md-12 order-md-last mb-4 mb-md-0">
+                <div class="row mt-3  d-flex align-items-center"> 
+                  <div class="col-12 text-center mb-3"> 
+                  <h2 class="text-center">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
+                  </div>
+                  
+                  @foreach($bem as $b)
+                  <div class="col-md-6 col-lg-6 col-sm-12  ">
+                  <div class="card border">
+                    <img src="{{asset($b->calon_pasfoto)}}" class="card-img-top img-fluid  fotopasangan">
+                    <div class="card-body p-2 pb-0">
+                      <h3 class="card-title mb-2">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3> 
+                      <p class="card-text"><b>{{$b->calon_namaketua}}</b> ({{$b->calon_npmketua}}) & <b>{{$b->calon_namawakil}}</b> ({{$b->calon_npmwakil}})  </p>
+                    </div> 
+                    <div class="card-footer p-3">
+                      <a href="{{url('calon/bem/'.$b->calon_nourut)}}" class="btn btn-md btn-primary">Lihat Profil, Visi Misi & Program Kerja</a> 
+       
+                    </div> 
+                    
+                  </div>
+                </div>
+                  @endforeach
+                </div>
+                 
+                <div class="row mt-3"> 
+                  <div class="col-12 text-center mb-3" > 
+                  <h2 class="text-center"> Calon Anggota BPM</h2>
+                  </div>  
+                  @foreach($bpm as $p)
+                  <div class="col-md-4 col-lg-4 col-sm-6" >
+                  <div class="card border" style="max-width: 20em;">
+                    <img src="{{asset($p->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
+                    <div class="card-body p-3">
+                      <h5 class="card-title mb-2">{{$p->calon_namacalon}}</h5>
+                      <p class="card-text"><b> NO URUT {{$p->calon_nourut}}</b><br><span class="badge badge-info">Angkatan {{$p->angkatan_tahun}}</span></p>
+                    </div> 
+                    
+                  </div>
+                </div>
+                  @endforeach
+                </div> 
+<div class="text-center">
+                <a class="text-white btn btn-lg btn-primary" href="{{url('calon')}}">Kenali Calon Lebih Dekat</a>
+              </div>
+              </div>
+               
                 </div>
                 </div>
               </section>
@@ -50,36 +89,35 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4">
-            <img src="{{asset('assets/images/anywhere.png')}}" class="col-md-11" id="style3"></div>
+            <img src="{{asset('assets/images/logo.png')}}" class="col-md-11" id="style3"></div>
             <div class="col-md-6 mb-4">
-              <h2 class="h1 mb-4">Gunakan Hak Suara, Dimana Saja, Tanpa Repot!</h2>
+              <h2 class="h1 mb-4">Sekilas tentang KPU</h2>
               <ul class="list-unstyled"><li class="d-flex py-2">
                 <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                 </div>
-                <span class="lead mt-n1"><strong>All Browser Support</strong> Laptop? PC? Smartphone? Chrome? Firefox? Safari? Semua bisa!</span>
+                <span class="lead mt-n1"><strong>Apa itu KPU Kemafar?</strong> KPU Kemafar adalah lembaga penyelanggara pemilihan umum yang bersifat
+                  independen yang bertugas melaksanakan pemilihan umum. Pemilu
+                  merupakan rangkaian acara yang bertujuan untuk melakukan pemilihan Ketua
+                  dan Wakil ketua BEM, serta BPM sebagai senator dari tiap angkatan
+                  </span>
                 </li>
                 <li class="d-flex py-2">
                   <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
                 </div>
-                <span class="lead mt-n1"><strong>24/7 Access</strong> 
-                 Gunakan hak suaramu jam 3 pagi? Setelah kelas sore? Atau sambil diskusi dengan teman di Google Meet ? Bisa! </span></li>
-                  <li class="d-flex py-2">
-                    <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2"><svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
-                  </div>
-                  <span class="lead mt-n1">
-                    <strong>Privacy Protected, Your Data is Safe!</strong> 
-                   Pilihanmu terenkripsi, tidak perlu login selama kamu terdaftar sebagai hak pilih</span>
-                  </li>
+                <span class="lead mt-n1"><strong>Asas Asas KPU</strong> 
+                  Pemilu Kemafar dilaksanakan berdasarkan asas langsung, bebas, rahasia,
+                  jujur, adil, dan demokratis </span></li>
+                   
                 </ul>
-                <a class="lead mt-2 mb-2 mb-md-0 ml-4 ml-sm-4 hover-arrow" href="{{url('cek-pemilih')}}">Cek Daftar Pemilih Tetap</a>
+ 
               </div>
             </div>
           </div>
         </section>
       
-<section class="bg-primary text-light py-2 py-md-1 o-hidden">
+<section class="bg-primary-alt text-light py-2 py-md-1 o-hidden">
   <div class="decoration-wrapper d-none d-lg-block">
     <div class="decoration scale-1" style="top:-30px;left:2%;transform:rotate(-74.43deg)">
       <svg class="bg-yellow" width="156" height="159" viewBox="0 0 156 159" fill="none">
@@ -92,8 +130,8 @@
           <img src="{{asset('assets/images/future.png')}}" id="style4"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih?</span>
-            <h2 class="h1">Tentukan Masa Depan Kampusmu Sekarang</h2>
-            <p class="lead">Tanpa login, masukan kode rahasia yang dikirim ke email Student Unpad lalu gunakan hak pilihmu! Hanya 5 menit!.</p>
+            <h2 class="h1">Yuk, Tentukan Masa Depan Kemafar!</h2>
+            <p class="lead">Join google meet, masukkan kode rahasia dengan kode unik yang akan diberikan oleh admin, hanya 5 menit!.</p>
             <a href="{{url('pilih')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
         </div>

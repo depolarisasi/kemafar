@@ -8,7 +8,7 @@
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
               <h1 class="display-4">Terima Kasih</h1>
                 <div class="my-4">
-                  <p class="lead">Terima kasih, suara kamu sudah kami catat ! terima kasih telah menggunakan hak suara mu !.</p>
+                  <p class="lead">Terima kasih, suara kamu sudah kami catat ! Terimakasih sudah menggunakan hak pilihmu!.</p>
                    
                 </div>
 

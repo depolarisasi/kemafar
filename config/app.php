@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'KPUM FH UNPAD'),
+    'name' => env('APP_NAME', 'KPU KEMAFAR'),
 
     /*
     |--------------------------------------------------------------------------

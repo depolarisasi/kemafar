@@ -29,11 +29,8 @@ class UndanganMemilih extends Mailable
     public function build()
     {
         
-        return $this->from('panitia@pemilufhunpad.com')
-        ->view('undanganmemilih')
-        ->with(
-         [
-             'nama' => 'Panitia KPUM 2020', 
-         ]);
+        return $this->from('panitia@kpukemafar.com')
+        ->view('undanganmemilih');
+         
     }
 }

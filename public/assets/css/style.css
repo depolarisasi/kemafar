@@ -10544,31 +10544,31 @@ section {
  background:linear-gradient(180deg,transparent 0,rgba(0,0,0,.65))
 }
 .overlay .divider {
- z-index:1
+ z-index:1;
 }
 .overlay.card:after {
  border-radius:0 0 .625rem .625rem
 }
 .overlay>.position-absolute {
- z-index:2
+ z-index:2;
 }
 .shadow-3d {
  box-shadow:.5rem .5rem 0 rgba(233,236,239,.5)
 }
 .bg-primary-alt {
- background:#f2f6fd
+ background:#282c49;
 }
 .bg-primary-2-alt {
- background:#fff9f1
+ background:#fff9f1;
 }
 .bg-primary-3-alt {
- background:#f1f2f3
+ background:#f1f2f3;
 }
 .bg-yellow-alt {
- background:#fff9f1
+ background:#fff9f1;
 }
 .bg-black-alt {
- background:#f1f2f3
+ background:#f1f2f3;
 }
 div.rounded,
 img.rounded {

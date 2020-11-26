@@ -1,88 +1,105 @@
-@extends('layouts.main')
-@content('title','')
+@extends('layouts.main') 
 @section('content')
-  
-<section class="bg-primary-alt o-hidden py-5 ">
 
+<section class="o-hidden mt-5 py-5 ">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
-            <div class="col-lg-7 text-center text-lg-left mb-4 mb-lg-0">
-            <p class="text-white  lead">Selamat Datang Kemafar.</p>
-              <h1 class="text-white display-4">Kemafar
-                <span class="text-primary-2">Memilih</span></h1>
-                <div class="my-4">
-                  <p class="text-white  lead">Corona bukan alasan untuk tidak menggunakan hak
-pilihmu.</p>
+            <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
+              <h1 class="display-4 text-center">Pemilihan Umum Kemafar 2020</h1>
+                 <!-- content -->
+                 <div class="row">
+                            <div class="col-md-7">
+                              <div class="card">
+                                <div class="card-body p-3"> 
+                                <h4 class="header-title mt-0 mb-1">Tabulasi Suara BEM</h4>
+                                <div id="apex-pie-1" class="apex-charts" dir="ltr"></div>
+                                <table class="table mt-2">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Pasangan</th>
+      <th scope="col">Suara Hari 1</th>
+      <th scope="col">Suara Hari 2</th>
+      <th scope="col">Suara Hari 3</th>
+      <th scope="col">Total Suara Masuk</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($pasangancalon as $p) 
+    <tr>
+      <th scope="row">{{$p->calon_namapasangan}}</th>
+
+      <td>{{$arrayhasil[$p->idcalonbem]['hari1']}}</td>
+      <td>{{$arrayhasil[$p->idcalonbem]['hari2']}}</td>
+      <td>{{$arrayhasil[$p->idcalonbem]['hari3']}}</td>
+      <td>{{$arrayhasil[$p->idcalonbem]['totalcalon']['suara_count']}}</td>
+    </tr> 
+  @endforeach
+  <tr>
+      <th scope="row">Suara Tidak Sah / Kosong</th>
+
+      <td>{{$arraytidaksah['hari1']}}</td>
+      <td>{{$arraytidaksah['hari2']}}</td>
+      <td>{{$arraytidaksah['hari3']}}</td>
+      <td>{{$arraytidaksah['totalgolput']}}</td>
+    </tr> 
+    
+  </tbody>
+</table>
+
+                            </div>
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-md-5">
+                                      <div class="card">
+                                          <div class="card-body p-3"> 
+                                          <h4 class="header-title mt-0 mb-1">Tabulasi Suara BPM</h4> 
+                                          <div class="row">
+                                            @foreach($calon_bpm as $b)
+                                            <div class="col-10 mb-2">
+                                              <img src="{{asset($b->calon_pasfoto)}}" class="img-fluid rounded-circle" style="width: 48px; height:48px;">
+                                           <p class="ml-2 d-inline-block"><b>{{substr($b->calon_namacalon,0,20)}}</b> ({{$b->angkatan_tahun}})</p>
+                                            </div>
+                                            
+                                            <div class="col-2 mb-2">
+                                              <h2>{{$b->suara}}</h2>
+                                            </div>
+                                            @endforeach
+                                          </div>
+                                             
+                                      </div>
+                                                  </div> 
+                                          </div>
+                                </div>
+                <center><a class="btn btn-lg btn-primary text-center" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
                 </div>
-                <a class="text-white btn btn-lg btn-primary" href="{{url('pilih')}}">Gunakan Hak Pilih</a>
-              </div>
-              <div class="col-lg-5 text-center">
-<img src="{{asset('assets/images/democracy.png')}}" class="img-fluid" id="style1">
-              </div>
+              </div> 
             </div>
           </div>
         </section>
 
 
-        <section class="pt-0 pt-md-5 pt-xl-7">
+        <section class="pt-0 pt-md-5 pt-xl-7" style="background-color: #F4E5E6;">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-md-12 d-flex align-items-center">
-                <div>
-                  <h2 class="display-4">Kenalan Yuk !</h2> 
+              <div class="col-md-6 order-md-last mb-4 mb-md-0">
+                <img src="{{asset('assets/images/capim.png')}}" class="img-fluid" id="style2"></div>
+                <div class="col-md-6 d-flex align-items-center"><div>
+                  <h2 class="display-4">Kenali Calon Pemimpinmu</h2>
+                  <p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka !</p>
+                    <h4 class="mb-3">Visi & Misi</h4> 
+                    <h4 class="mb-3">Informasi Kampanye</h4>
+                    <h4 class="mb-3">Profil & CV</h4> 
+                      <div class="mt-4"><a class="lead mt-4 hover-arrow" href="{{url('calon')}}">Kenali Calon</a>
+                      </div>
                     </div>
                   </div>
-              <div class="col-md-12 order-md-last mb-4 mb-md-0">
-                <div class="row mt-3  d-flex align-items-center"> 
-                  <div class="col-12 text-center mb-3"> 
-                  <h2 class="text-center">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
-                  </div>
-                  
-                  @foreach($calonbem as $b)
-                  <div class="col-md-6 col-lg-6 col-sm-12  ">
-                  <div class="card border">
-                    <img src="{{asset($b->calon_pasfoto)}}" class="card-img-top img-fluid  fotopasangan">
-                    <div class="card-body p-2 pb-0">
-                      <h3 class="card-title mb-2">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3> 
-                      <p class="card-text"><b>{{$b->calon_namaketua}}</b> ({{$b->calon_npmketua}}) & <b>{{$b->calon_namawakil}}</b> ({{$b->calon_npmwakil}})  </p>
-                    </div> 
-                    <div class="card-footer p-3">
-                      <a href="{{url('calon/bem/'.$b->calon_nourut)}}" class="btn btn-md btn-primary">Lihat Profil, Visi Misi & Program Kerja</a> 
-       
-                    </div> 
-                    
-                  </div>
-                </div>
-                  @endforeach
-                </div>
-                 
-                <div class="row mt-3"> 
-                  <div class="col-12 text-center mb-3" > 
-                  <h2 class="text-center"> Calon Anggota BPM</h2>
-                  </div>  
-                  @foreach($calonbpm as $p)
-                  <div class="col-md-4 col-lg-4 col-sm-6" >
-                  <div class="card border" style="max-width: 20em;">
-                    <img src="{{asset($p->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
-                    <div class="card-body p-3">
-                      <h5 class="card-title mb-2">{{$p->calon_namacalon}}</h5>
-                      <p class="card-text"><b> NO URUT {{$p->calon_nourut}}</b><br><span class="badge badge-info">Angkatan {{$p->angkatan_tahun}}</span></p>
-                    </div> 
-                    
-                  </div>
-                </div>
-                  @endforeach
-                </div> 
-<div class="text-center">
-                <a class="text-white btn btn-lg btn-primary" href="{{url('calon')}}">Kenali Calon Lebih Dekat</a>
-              </div>
-              </div>
-               
                 </div>
                 </div>
               </section>
 
-   <section class="pt-0 pt-md-5 pt-xl-7 layer-4">
+   
+              <section class="pt-0 pt-md-5 pt-xl-7 layer-4">
      <div class="decoration-wrapper d-none d-lg-block">
        
       </div>
@@ -117,6 +134,7 @@ pilihmu.</p>
           </div>
         </section>
       
+      
 <section class="bg-primary-alt text-light py-2 py-md-1 o-hidden">
   <div class="decoration-wrapper d-none d-lg-block">
     <div class="decoration scale-1" style="top:-30px;left:2%;transform:rotate(-74.43deg)">
@@ -138,4 +156,22 @@ pilihmu.</p>
       </div>
     </div>
   </section>
+  @section('js') 
+                        <!-- third party:js -->
+                        <script src="{{asset('adminasset/libs/apexcharts/apexcharts.min.js')}}"></script>
+                        <!-- third party end -->
+                        <!-- Your application script --> 
+<script src="{{asset('adminasset/libs/flatpickr/flatpickr.min.js')}}"></script> 
+<script>
+$("#tgldibuka").flatpickr({maxDate: new Date(),dateFormat: "Y/m/d",allowInput: true}); 
+e = {
+                chart: { height: 320, type: "pie" },
+                series:  {!! json_encode($arr, JSON_HEX_TAG) !!},
+                labels: ["Macan Asia", "Joma",],
+                legend: { show: !0, position: "bottom", horizontalAlign: "center", verticalAlign: "middle", floating: !1, fontSize: "14px", offsetX: 0, offsetY: -10 },
+                responsive: [{ breakpoint: 600, options: { chart: { height: 240 }, legend: { show: !1 } } }],
+            };
+            new ApexCharts(document.querySelector("#apex-pie-1"), e).render();
+</script>
+@endsection
 @endsection

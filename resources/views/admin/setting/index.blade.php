@@ -26,19 +26,11 @@
                                          
 <form method="POST" action="{{url('pengelola/setting/update')}}">
     @csrf
+     
     <div class="form-group row mt-4">
-        <label class="col-md-2" >Kunci Kotak Suara</label>
-        <div class="col-md-3">
-          <div class="custom-control custom-switch">
-              <input type="checkbox" class="custom-control-input" name="kuncikotak" @if($kuncikotak->setting_value == 1) value="on" checked @else @endif id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1"></label>
-            </div>
-        </div>
-      </div> 
-    <div class="form-group row mt-4">
-      <label class="col-md-2" >Tanggal Pembukaan Kotak Suara</label>
+      <label class="col-md-2" >Tanggal Pemilihan</label>
       <div class="col-md-3">
-      <input type="text" class="form-control" name="tanggalbuka" id="tgldibuka" value="{{$tanggalbukakotak->setting_value}}" required autofocus>
+      <input type="text" class="form-control" name="tanggalpemilihan" id="tglpemilihan" value="{{$tanggalpemilihan->setting_value}}" required autofocus>
       <small>Fungsi kotak suara untuk hasil rekap tidak akan bisa diakses sampai tanggal ini terpenuhi</small>
       </div>
     </div>
@@ -64,7 +56,7 @@
                         @section('js')
 <script src="{{asset('adminasset/libs/flatpickr/flatpickr.min.js')}}"></script> 
 <script>
-$("#tgldibuka").flatpickr({maxDate: new Date(),dateFormat: "Y/m/d",allowInput: true}); 
+$("#tglpemilihan").flatpickr({maxDate: new Date(),dateFormat: "Y-m-d",allowInput: true}); 
 </script>
 @endsection
                         @endsection

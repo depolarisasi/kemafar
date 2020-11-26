@@ -47,4 +47,9 @@ class CalonBem extends Model
         'created_at',
         'updated_at', ];
  
+        public function suara()
+        {
+            return $this->hasMany('App\Models\Suara', 'suara_calidbem','idcalonbem');
+        }
+ 
 }

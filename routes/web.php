@@ -17,19 +17,21 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::auth();
 
+Route::get('panduan', [App\Http\Controllers\HomeController::class, 'panduan']);
+Route::get('privacy-and-algorithm', [App\Http\Controllers\HomeController::class, 'privacy']);
+
 Route::get('cek-pemilih', [App\Http\Controllers\PemilihController::class, 'checkdpt']);
 Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpemilih']);
 
-Route::get('calon', [App\Http\Controllers\CalonController::class, 'kenalicalon']);
+Route::get('logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
+Route::get('calon', [App\Http\Controllers\CalonController::class, 'kenalicalon']); 
 
 Route::get('calon/bem/', [App\Http\Controllers\CalonController::class, 'semuacalonbem']);
 Route::get('calon/bpm/', [App\Http\Controllers\CalonController::class, 'semuacalonbpm']);
 
 Route::get('calon/bem/{id}', [App\Http\Controllers\CalonController::class, 'profilpasanganbem']);
 Route::get('calon/bpm/{id}', [App\Http\Controllers\CalonController::class, 'profilcalonbpm']);
-
-
 
 Route::get('pilih', [App\Http\Controllers\SuaraController::class, 'pilihauthenticate']);
 Route::post('pilih', [App\Http\Controllers\SuaraController::class, 'authenticateuser']);

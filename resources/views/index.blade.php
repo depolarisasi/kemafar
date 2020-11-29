@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@content('title','')
+@section('title',"")
 @section('content')
   
 <section class="bg-primary-alt o-hidden py-5 ">

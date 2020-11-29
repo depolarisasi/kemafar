@@ -146,6 +146,12 @@
                                     <span> Hasil Suara </span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{url('pengelola/laporan')}}">
+                                    <i data-feather="alert-circle"></i> 
+                                    <span> Laporan Pelanggaran </span>
+                                </a>
+                            </li> 
                               
                         </ul>
                     </div>

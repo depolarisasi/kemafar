@@ -25,6 +25,10 @@ Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpe
 
 Route::get('logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
+Route::get('lapor', [App\Http\Controllers\laporanController::class, 'laporindex']);
+Route::post('lapor', [App\Http\Controllers\laporanController::class, 'laporindexstore']);
+
+
 Route::get('calon', [App\Http\Controllers\CalonController::class, 'kenalicalon']); 
 
 Route::get('calon/bem/', [App\Http\Controllers\CalonController::class, 'semuacalonbem']);
@@ -56,6 +60,14 @@ Route::group(['prefix' => 'angkatan'], function() {
     Route::get('edit/{id}', [App\Http\Controllers\AngkatanController::class, 'edit']);
     Route::post('edit', [App\Http\Controllers\AngkatanController::class, 'update']);
     Route::get('delete/{id}', [App\Http\Controllers\AngkatanController::class, 'delete']);
+});
+
+   
+Route::group(['prefix' => 'laporan'], function() { 
+    Route::get('/', [App\Http\Controllers\laporanController::class, 'index']);
+    Route::get('detail/{id}', [App\Http\Controllers\laporanController::class, 'detail']);  
+    Route::get('proses/{id}', [App\Http\Controllers\laporanController::class, 'proses']);  
+    Route::get('delete/{id}', [App\Http\Controllers\laporanController::class, 'delete']);
 });
 
 Route::group(['prefix' => 'pemilih'], function() { 

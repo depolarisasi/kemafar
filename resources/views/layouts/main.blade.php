@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Komisi Pemilihan Umum Mahasiswa Kemafar</title>
+    <title>@yield('title') Komisi Pemilihan Umum Kemafar</title>
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" style="background-color:#131723 !important;"> 
           <div class="container">
-            <a class="navbar-brand text-white" href="/"><img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="width: 100px; height: auto;"></a>
+            <a class="navbar-brand text-white" href="/"><img src="{{asset('assets/images/logo.png')}}" class="img-fluid" style="width: 100px; height: auto;">KPU Kemafar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,6 +35,7 @@
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/cek-pemilih')}}">Cek Status Pemilih</a></li>  
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/calon')}}">Kenali Calon</a></li>   
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/panduan')}}">Cara Memilih</a></li>    
+                <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/lapor')}}">Lapor</a></li>    
                 <li class="nav-item"><a class="nav-link text-white btn btn-sm btn-info" href="{{url('/pilih')}}" style="color:white;">Pilih  Sekarang</a></li>    
               </ul>
               </ul>

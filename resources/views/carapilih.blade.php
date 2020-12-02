@@ -8,22 +8,9 @@
             <div class="col-lg-12 mb-4 mb-lg-0">
               <h1 class="display-4  text-center ">Panduan Memilih</h1> 
                   <p>Selamat datang di Website Resmi Pemilihan Umum Fakultas Hukum UNPAD ! Berikut adalah panduan bagaimana kamu dapat menggunakan hak pilih kamu.</p>
-              <br>
-              <h3>1. Cek Status Pemilih</h3>
-              <p>Untuk mengecek apakah kamu terdaftar sebagai pemilih dan memiliki hak suara dalam sistem pemilihan umum FH Unpad, silahkan kunjungi halaman <a href="{{url('cek-pemilih')}}">"Cek Status Pemilih"</a> lalu masukan nomor pokok mahasiswa, apabila terdaftar akan ada notifikasi berwarna hijau yang menyebutkan bahwa kamu terdaftar. 
-             
-             <br><img src="{{asset('tutorial/tutorial-0.png')}}" style="width:50%;" class="img-fluid"></img>
-             
-              <br><b>Namun, apabila tidak terdaftar sebagai pemilih</b> maka terdapat beberapa kemungkinan : 
-              <ol>
-              <li>Status kemahasiswaan dianggap tidak aktif oleh dekanat / universitas</li> 
-              <li>Tidak memiliki hak pilih </li>
-              <li>Informasi Belum di input oleh panitia </li>
-              </ol>
-              Apabila demikian silahkan hubungi panitia KPUM FH Unpad untuk meminta informasi lebih lanjut.</p>
-<br>
-              <h3>2. Dapatkan Undangan Pemilihan Melalui Email</h3>
-              <p>Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
+              
+              <h3>1. Dapatkan Undangan Pemilihan Melalui Email / Google Meet</h3>
+              <p>Ikuti prosedur untuk mendapatkan kode memilih. Pemilih akan diverifikasi oleh panitia melalui Google Meet lalu pemilih akan mendapatkan email berisi kode unik untuk memilih. Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
               <br>
               <img src="{{asset('tutorial/tutorial-1.png')}}" style="width:50%;"  class="img-fluid"></img> 
             <br>Kode pada email tersebut berbentuk angka sebanyak 6-10 digit yang bersifat random, kode ini selanjutnya akan dimasukan di halaman <a href="{{url('pilih')}}">"Tentukan Pilihan"</a> sebagai one-time password untuk menggunakan hak suara. untuk informasi mengenai cara kerja dan algoritma dibalik sistem ini silahkan lihat di halaman <a href="{{url('privacy-and-algorithm')}}">"
@@ -37,7 +24,7 @@ Kebijakan Privasi & Cara Kerja Sistem"</a>
            
 
             <br>
-              <h3>3. Tentukan Pilihan</h3>
+              <h3>2. Tentukan Pilihan</h3>
               <p>Setelah mendapat 6-10 digit kode, copy kode tersebut lalu kunjungi halaman <a href="{{url('pilih')}}">Tentukan Pilihan</a>
               <br>
               <img src="{{asset('tutorial/tutorial-2.png')}}" class="img-fluid"></img> 

@@ -53,7 +53,7 @@
                                     <div class="col-md-5">
                                       <div class="card">
                                           <div class="card-body p-3"> 
-                                          <h4 class="header-title mt-0 mb-1">Tabulasi Suara BPM</h4> 
+                                          <h4 class="header-title mt-0 mb-1 nerko">Tabulasi Suara BPM</h4> 
                                           <div class="row">
                                             @foreach($calon_bpm as $b)
                                             <div class="col-10 mb-2">
@@ -85,7 +85,7 @@
               <div class="col-md-6 order-md-last mb-4 mb-md-0">
                 <img src="{{asset('assets/images/capim.png')}}" class="img-fluid" id="style2"></div>
                 <div class="col-md-6 d-flex align-items-center"><div>
-                  <h2 class="display-4">Kenali Calon Pemimpinmu</h2>
+                  <h2 class="display-4 nerko">Kenali Calon Pemimpinmu</h2>
                   <p class="lead mb-4">Kenali, dan lihat lebih dekat siapa mereka !</p>
                     <h4 class="mb-3">Visi & Misi</h4> 
                     <h4 class="mb-3">Informasi Kampanye</h4>
@@ -108,7 +108,7 @@
           <div class="col-md-6 mb-4">
             <img src="{{asset('assets/images/logo.png')}}" class="col-md-11" id="style3"></div>
             <div class="col-md-6 mb-4">
-              <h2 class="h1 mb-4">Sekilas tentang KPU</h2>
+              <h2 class="h1 mb-4 nerko">Sekilas tentang KPU</h2>
               <ul class="list-unstyled"><li class="d-flex py-2">
                 <div class="icon-round icon-round-full icon-round-xs bg-primary mr-2">
                   <svg class="injected-svg icon bg-white" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18.1206 5.4111C18.5021 4.92016 19.1753 4.86046 19.6241 5.27776C20.073 5.69506 20.1276 6.43133 19.746 6.92227L10.6794 18.5889C10.2919 19.0876 9.60523 19.1401 9.15801 18.7053L4.35802 14.0386C3.91772 13.6106 3.87806 12.8732 4.26944 12.3916C4.66082 11.91 5.33503 11.8666 5.77533 12.2947L9.76023 16.1689L18.1206 5.4111Z" fill="#212529"></path></svg>
@@ -148,7 +148,7 @@
           <img src="{{asset('assets/images/future.png')}}" id="style4"></div>
           <div class="col-12 col-md-6 d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih?</span>
-            <h2 class="h1">Yuk, Tentukan Masa Depan Kemafar!</h2>
+            <h2 class="h1 nerko">Yuk, Tentukan Masa Depan Kemafar!</h2>
             <p class="lead">Join google meet, masukkan kode rahasia dengan kode unik yang akan diberikan oleh admin, hanya 5 menit!.</p>
             <a href="{{url('pilih')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>

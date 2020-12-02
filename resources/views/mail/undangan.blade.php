@@ -31,8 +31,8 @@ width: 100% !important;
 <table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
 <tr>
 <td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
-<a href="http://pemilufhunpad.com" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
-<img src="http://pemilufhunpad.com/assets/images/logo-kpum.png" height="100px"/>
+<a href="http://kpukemafar.com" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+<img src="http://kpukemafar.com/assets/images/logo.png" height="100px"/>
 </a>
 </td>
 </tr>
@@ -45,10 +45,10 @@ width: 100% !important;
 <tr>
 <td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
 <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Halo, {{$nama}} !</h1>
-<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;"> <br> Bersama dengan ini diberitahukan bahwa KPUM 2020 mengundang saudara/i untuk memilih pasangan Ketua-Wakil Ketua BEM FH Unpad dan atau Anggota BPM FH Unpad Periode 2020/2021 pada : <br> <br>
-Waktu : 3-5 Desember 2020, pukul 07.00 - 18.00 WIB <br>
-Tempat : https://pemilufhunpad.com <br> <br>
-Cara Pemilihan : Silahkan copy kode unik dibawah ini lalu isi pada menu Pilih Sekarang pada menu atas atau klik Gunakan Hak Pilih atau <a href="https://pemilufhunpad.com">klik disini</a> lalu paste atau ketik kode unik dibawah ini lalu klik pilih sekarang dan gunakan suara anda dengan bijak <br>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;"> <br> Bersama dengan ini diberitahukan bahwa KPU Kemafar 2020 mengundang saudara/i untuk memilih pasangan Ketua-Wakil Ketua BEM Kemafar Unpad dan atau Anggota BPM Kemafar Unpad Periode 2020/2021 pada : <br> <br>
+Waktu : 10-11 Desember 2020, pukul 07.00 - 18.00 WIB <br>
+Tempat : http://kpukemafar.com <br> <br>
+Cara Pemilihan : Silahkan copy kode unik dibawah ini lalu isi pada menu Pilih Sekarang pada menu atas atau klik Gunakan Hak Pilih atau <a href="http://kpukemafar.com">klik disini</a> lalu paste atau ketik kode unik dibawah ini lalu klik pilih sekarang dan gunakan suara anda dengan bijak <br>
 <br> <b>KODE BERSIFAT SANGAT RAHASIA, RAHASIAKAN SELALU KODE ANDA DARI SIAPAPUN </b></p> 
 <table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
 <tr>
@@ -69,9 +69,9 @@ Cara Pemilihan : Silahkan copy kode unik dibawah ini lalu isi pada menu Pilih Se
 </td>
 </tr>
 </table>
-<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Terkait cara pemilihan lebih lengkap, informasi calon, visi misi dan biografi dapat dilihat pada website KPUM dengan cara <a href="https://pemilufhunpad.com">klik disini</a></p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Terkait cara pemilihan lebih lengkap, informasi calon, visi misi dan biografi dapat dilihat pada website KPU Kemafar Unpad dengan cara <a href="hhttp://kpukemafar.com">klik disini</a></p>
 <p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Hormat Kami,<br>
-KPUM FH Unpad</p>
+KPU Kemafar Unpad</p>
  
 </td>
 </tr>

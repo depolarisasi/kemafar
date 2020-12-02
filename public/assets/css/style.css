@@ -1,7 +1,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum Pen Script:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -37,7 +38,7 @@
  --breakpoint-md:768px;
  --breakpoint-lg:992px;
  --breakpoint-xl:1200px;
- --font-family-sans-serif:'Inter',
+ --font-family-sans-serif:'Nanum Pen Script',
  -apple-system,
  BlinkMacSystemFont,
  "Segoe UI",
@@ -82,7 +83,7 @@ section {
 }
 body {
  margin:0;
- font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Nanum Pen Script',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-size:1rem;
  font-weight:400;
  line-height:1.5;
@@ -5308,7 +5309,7 @@ a.close.disabled {
  z-index:1070;
  display:block;
  margin:0;
- font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Nanum Pen Script',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-style:normal;
  font-weight:400;
  line-height:1.5;
@@ -5414,7 +5415,7 @@ a.close.disabled {
  left:0;
  z-index:1060;
  max-width:276px;
- font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+ font-family:'Nanum Pen Script',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
  font-style:normal;
  font-weight:400;
  line-height:1.5;
@@ -18141,7 +18142,7 @@ body.fade-page {
  }
 }
 body {
- font-family:'Inter',sans-serif;
+ font-family:'Nanum Pen Script',sans-serif;
  color:#2b2f33
 } 
 .bg-img {
@@ -18406,4 +18407,8 @@ svg.bg-yellow * {
 
 .noborder{
     border: none;
+}
+
+.nerko {
+    font-family: 'Nerko One', cursive !important;
 }

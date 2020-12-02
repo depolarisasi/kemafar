@@ -5,7 +5,7 @@
             <div class="container">
           <div class="row align-items-center flex-column-reverse flex-md-row min-vh-40 mt-5">
             <div class="col-lg-7 text-center text-lg-left mb-4 mt-2 mb-lg-0">
-              <h1 class="display-4">{{$detail->calon_namapasangan}}</h1>
+              <h1 class="display-4 nerko">{{$detail->calon_namapasangan}}</h1>
               <p class="lead">{{$detail->calon_slogan}}</p>  
                 <div class="my-4"> 
                   <p class="lead"><b>{{$detail->calon_namaketua}} & {{$detail->calon_namawakil}}</b></p>  

@@ -5,13 +5,13 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4 text-center">Pemilihan Umum Kemafar 2020</h1>
+              <h1 class="display-4 text-center nerko">Pemilihan Umum Kemafar 2020</h1>
                  <!-- content -->
                  <div class="row">
                             <div class="col-md-7">
                               <div class="card">
                                 <div class="card-body p-3"> 
-                                <h4 class="header-title mt-0 mb-1">Tabulasi Suara BEM</h4>
+                                <h4 class="header-title mt-0 mb-1 nerko">Tabulasi Suara BEM</h4>
                                 <div id="apex-pie-1" class="apex-charts" dir="ltr"></div>
                                 <table class="table mt-2">
   <thead class="thead-dark">

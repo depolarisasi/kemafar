@@ -5,7 +5,7 @@
             <div class="container">
           <div class="row align-items-center flex-column-reverse flex-md-row min-vh-40 mt-5">
             <div class="col-lg-7 text-center text-lg-left mb-4 mt-2 mb-lg-0">
-              <h1 class="display-4">{{$detail->calon_namacalon}}</h1> 
+              <h1 class="display-4 nerko">{{$detail->calon_namacalon}}</h1> 
                 <div class="my-2">  
                   <p class="lead"> <span class="badge badge-primary">Angkatan {{$detail->angkatan_tahun}}</span>  <span class="badge badge-secondary">Nomor Urut {{$detail->calon_nourut}}</span></p>
                 </div> 

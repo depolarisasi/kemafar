@@ -16,7 +16,7 @@
                     <input type="hidden" name="suara_idpemilih" value="{{$idpem}}">
                   <div clsas="row">
                     <div class="col-12"> 
-              <h3>Calon Pasangan Ketua & Wakil Ketua BEM</h3>
+              <h3 class="nerko">Calon Pasangan Ketua & Wakil Ketua BEM</h3>
                     </div>
                   </div>
                   <div class="grid mb-5 ">
@@ -35,7 +35,7 @@
                   <hr>
                   <div clsas="row  mt-5 pt-5">
                     <div class="col-12"> 
-              <h3>Calon Anggota BPM</h3>
+              <h3 class="nerko">Calon Anggota BPM</h3>
                     </div>
                   </div>
                   <div class="grid">

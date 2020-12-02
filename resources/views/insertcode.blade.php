@@ -6,7 +6,7 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4"> Tentukan Pilihan</h1>
+              <h1 class="display-4 nerko"> Tentukan Pilihan</h1>
                 <div class="my-4">
                   <p class="lead">Isi kode rahasia yang dikirim ke email Student Unpad untuk menggunakan hak pilih.</p>
                   <p><small>Kami menggunakan teknologi Cookies & Javascript, pastikan browser kamu mengaktifkan fitur Javascript dan menerima Cookies.</small></p>

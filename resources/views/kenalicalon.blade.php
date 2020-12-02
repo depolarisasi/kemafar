@@ -6,7 +6,7 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4">Kenali
+              <h1 class="display-4 nerko">Kenali
                 <span class="text-primary-2">Calon</span> 
                 Pemimpinmu</h1>
                 <div class="my-4">
@@ -33,7 +33,7 @@
               <div class="row mt-3"> 
                 <div class="col-12 text-center mb-3">
                   
-                <h2 class="text-center">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
+                <h2 class="text-center nerko">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
                 </div>
                 
                 @foreach($bem as $b)
@@ -41,7 +41,7 @@
                 <div class="card border">
                   <img src="{{asset($b->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
                   <div class="card-body p-3">
-                    <h3 class="card-title mb-2">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3>
+                    <h3 class="card-title mb-2 nerko">{{$b->calon_nourut}} - {{$b->calon_namapasangan}}</h3>
                     <p class="card-text"><b>{{$b->calon_slogan}}</b>
                       <br><b>{{$b->calon_namaketua}}</b> ({{$b->calon_npmketua}}) & <b>{{$b->calon_namawakil}}</b> ({{$b->calon_npmwakil}})  </p>
                   </div> 
@@ -56,7 +56,7 @@
               <div class="row mt-3"> 
                 <div class="col-12 text-center mb-3">
                   
-                <h2 class="text-center"> Calon Anggota BPM</h2>
+                <h2 class="text-center nerko"> Calon Anggota BPM</h2>
                 </div>
                 
                 @foreach($bpm as $p)
@@ -64,7 +64,7 @@
                 <div class="card border">
                   <img src="{{asset($p->calon_pasfoto)}}" class="card-img-top img-fluid fotopasangan">
                   <div class="card-body p-3">
-                    <h5 class="card-title mb-2">{{$p->calon_namacalon}}</h5>
+                    <h5 class="card-title mb-2 nerko">{{$p->calon_namacalon}}</h5>
                     <p class="card-text"><b> NO URUT {{$p->calon_nourut}}</b><br><span class="badge badge-info">Angkatan {{$p->angkatan_tahun}}</span></p>
                   </div> 
                   <div class="card-footer p-3">

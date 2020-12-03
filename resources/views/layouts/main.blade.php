@@ -37,6 +37,7 @@
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/cek-pemilih')}}">Cek Status Pemilih</a></li>  
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/calon')}}">Kenali Calon</a></li>   
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/panduan')}}">Cara Memilih</a></li>    
+                <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/timeline')}}">Info Pemilu</a></li>    
                 <li class="nav-item"><a class="nav-link text-white js-scroll-trigger" href="{{url('/lapor')}}">Lapor</a></li>    
                 <li class="nav-item"><a class="nav-link text-white btn btn-sm btn-info" href="{{url('/pilih')}}" style="color:white;">Pilih  Sekarang</a></li>    
               </ul>

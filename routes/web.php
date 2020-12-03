@@ -23,6 +23,9 @@ Route::get('privacy-and-algorithm', [App\Http\Controllers\HomeController::class,
 Route::get('cek-pemilih', [App\Http\Controllers\PemilihController::class, 'checkdpt']);
 Route::post('cekpemilih', [App\Http\Controllers\PemilihController::class, 'cekpemilih']);
 
+Route::get('timeline', [App\Http\Controllers\HomeController::class, 'timeline']);
+Route::get('hasil', [App\Http\Controllers\SuaraController::class, 'hasilpemilihan']);
+
 Route::get('logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
 Route::get('lapor', [App\Http\Controllers\laporanController::class, 'laporindex']);

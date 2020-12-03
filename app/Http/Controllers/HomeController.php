@@ -104,6 +104,10 @@ class HomeController extends Controller
     public function panduan(){
         return view('carapilih');
     }
+
+    public function timeline(){
+        return view('timeline');
+    }
  
     public function privacy(){
         return view('privacy-algorithm');

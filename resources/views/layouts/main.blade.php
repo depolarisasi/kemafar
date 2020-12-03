@@ -6,7 +6,7 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Suara Mahasiswa - Aplikasi Pemilu Online Kampus">
+    <meta name="description" content="Komisi Pemilihan Umum KEMAFAR">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">

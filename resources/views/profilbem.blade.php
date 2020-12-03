@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Profil Pasangan Calon'.$detail->calon_namapasangan.' - ')
+@section('title','Profil Pasangan Calon '.$detail->calon_namapasangan.' - ')
 @section('content')
 <section class="o-hidden py-5 ">
             <div class="container">

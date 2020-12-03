@@ -45,8 +45,8 @@ width: 100% !important;
 <tr>
 <td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
 <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Halo, {{$nama}} !</h1>
-<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;"> <br> Bersama dengan ini diberitahukan bahwa KPU Kemafar 2020 mengundang saudara/i untuk memilih pasangan Ketua-Wakil Ketua BEM Kemafar Unpad dan atau Anggota BPM Kemafar Unpad Periode 2020/2021 pada : <br> <br>
-Waktu : 10-11 Desember 2020, pukul 07.00 - 18.00 WIB <br>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;"> <br> Bersama dengan ini diberitahukan bahwa KPU Kemafar 2020 mengundang saudara/i untuk memilih pasangan Ketua-Wakil Ketua BEM Kemafar Unpad dan atau Anggota BPM Kemafar pada : <br> <br>
+Waktu : 21-25 Desember 2020<br>
 Tempat : http://kpukemafar.com <br> <br>
 Cara Pemilihan : Silahkan copy kode unik dibawah ini lalu isi pada menu Pilih Sekarang pada menu atas atau klik Gunakan Hak Pilih atau <a href="http://kpukemafar.com">klik disini</a> lalu paste atau ketik kode unik dibawah ini lalu klik pilih sekarang dan gunakan suara anda dengan bijak <br>
 <br> <b>KODE BERSIFAT SANGAT RAHASIA, RAHASIAKAN SELALU KODE ANDA DARI SIAPAPUN </b></p> 
@@ -69,7 +69,7 @@ Cara Pemilihan : Silahkan copy kode unik dibawah ini lalu isi pada menu Pilih Se
 </td>
 </tr>
 </table>
-<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Terkait cara pemilihan lebih lengkap, informasi calon, visi misi dan biografi dapat dilihat pada website KPU Kemafar Unpad dengan cara <a href="hhttp://kpukemafar.com">klik disini</a></p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Terkait cara pemilihan lebih lengkap, informasi calon, visi misi dan biografi dapat dilihat pada website KPU Kemafar Unpad dengan cara <a href="hhttp://kpukemafar.com/calon">klik disini</a></p>
 <p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Hormat Kami,<br>
 KPU Kemafar Unpad</p>
  

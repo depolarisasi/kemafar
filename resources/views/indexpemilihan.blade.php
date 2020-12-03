@@ -125,8 +125,7 @@
                 </div>
                 <span class="lead mt-n1"><strong>Asas Asas KPU</strong> 
                   Pemilu Kemafar dilaksanakan berdasarkan asas langsung, bebas, rahasia,
-                  jujur, adil, dan demokratis </span></li>
-                   
+                  jujur, adil, dan demokratis </span></li> 
                 </ul>
  
               </div>

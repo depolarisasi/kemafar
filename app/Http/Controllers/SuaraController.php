@@ -16,9 +16,111 @@ use Illuminate\Database\QueryException as QE;
 use Cookie;
 use DB;
 use Illuminate\Http\Response;
-
+use App\Models\Settings;
 class SuaraController extends Controller
 {
+    public function hasilpemilihan(){
+        function array_push_assoc($array, $key, $value){
+            $array[$key] = $value;
+            return $array;
+         }
+
+        $angkatan = Angkatan::orderBy('idangkatan','ASC')->get();
+        $petaangkatan = array();
+        foreach($angkatan as $an){
+            $arr = array();
+            $arr['angkatan'] = $an->angkatan_tahun;
+            $jumlahterdaftar = count(Pemilih::where('pemilih_angkatan', $an->idangkatan)->get());
+            $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
+            ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
+            ->select('pemilih.*','angkatan.*')
+            ->where('pemilih.pemilih_angkatan', $an->idangkatan)->get());
+            $arr['jumlah_pendaftar'] = $jumlahterdaftar;
+            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $petaangkatan[$an->angkatan_tahun] = $arr;
+        
+        }
+
+
+
+        $bem = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
+        
+        ->groupBy('suara_calidbem')
+        ->pluck('total','suara_calidbem')->all();
+
+        
+        $arrx = array();
+        foreach($bem as $b){
+            array_push($arrx, $b);
+        } 
+        $tanggalpemilihan = Settings::where('idsetting',3)->first();
+        $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
+        $hari2 = Carbon::parse($hari1)->add(1, 'day')->format('Y-m-d');
+        $hari3 = Carbon::parse($hari2)->add(1, 'day')->format('Y-m-d');
+
+        $hari = array($hari1,$hari2,$hari3);
+
+      $pasangancalon = CalonBem::get();
+      $arrayhasil = array();
+      foreach($pasangancalon as $p){
+        $array = array();
+        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get()); 
+        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
+        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get());
+        $totalcalon = $harike1+$harike2+$harike3; 
+        $array["hari1"] = $harike1;
+        $array["hari2"] = $harike2;
+        $array["hari3"] = $harike3;
+        $array["totalcalon"] = $totalcalon;
+        $arrayhasil[$p->idcalonbem] = $array;
+      }
+      
+      $pemetaanpilihan = array();
+      foreach($pasangancalon as $pc){
+        $array = array();
+        $infocalon = CalonBem::where('idcalonbem',$pc->idcalonbem)->select('calon_pasfoto','calon_nourut','calon_namapasangan','calon_slogan','calon_namaketua','calon_namawakil')->first();
+        $array['infocalon'] = $infocalon;
+        $pemilihberdasarkanangkatan = array();
+         foreach($angkatan as $an){ 
+            $arr = array();
+            $arr['angkatan'] = $an->angkatan_tahun; 
+            $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
+            ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
+            ->select('pemilih.*','angkatan.*','suara.*')
+            ->where('pemilih.pemilih_angkatan', $an->idangkatan)
+            ->where('suara.suara_calidbem',$pc->idcalonbem)
+            ->get());
+            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr; 
+         }
+         $array['pemilih'] = $pemilihberdasarkanangkatan;
+         $pemetaanpilihan[$pc->idcalonbem] = $array;
+    }
+
+      $totalpemilih = count(Pemilih::get());
+      $arraytidaksah = array();
+      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get()); 
+      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get()); 
+      $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
+      $golput = $golputharike1+$golputharike2+$golputharike3;
+      $arraytidaksah["hari1"] = $golputharike1;
+      $arraytidaksah["hari2"] = $golputharike2;
+      $arraytidaksah["hari3"] = $golputharike3;
+      $arraytidaksah["totalgolput"] = $golput;
+        $calon_bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.idangkatan','angkatan.angkatan_tahun')
+        ->orderBy('angkatan.idangkatan','ASC')->get();
+
+        for($i=0;$i<count($calon_bpm);$i++){
+            $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
+            $calon_bpm[$i]["suara"] =  $suaracalon;
+        } 
+        
+    
+    return view('hasilpemilihan')->with(compact('arrx','pemetaanpilihan','petaangkatan','totalpemilih','arraytidaksah','arrayhasil','arr','calon_bpm','hari1','hari2','hari3','pasangancalon'));
+   // return $hari1;   
+ 
+    }
 
     public function index(){
         $bpm = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
@@ -52,11 +154,13 @@ class SuaraController extends Controller
     public function pilihauthenticate(Request $request){
         
         $cookies = $request->cookie('secret');
+        $tanggalpemilihan = Settings::where('idsetting',3)->first();
+        $jammulaipemilihan = Settings::where('idsetting',4)->first();
+        $jamakhirpemilihan = Settings::where('idsetting',5)->first();
         if($cookies){
           return redirect('pilih/calon');
         }else {
-            
-        return view('insertcode');
+        return view('insertcode')->with(compact('tanggalpemilihan','jammulaipemilihan','jamakhirpemilihan'));
         }
     }
 
@@ -111,7 +215,7 @@ class SuaraController extends Controller
         try {
             $idsuara = Suara::insertGetId($store->all());
             $cookie = Cookie::forget('secret');
-            $pemilih->pemilih_pilihan = $idsuara;
+            $pemilih->pemilih_pilihan = $idsuara; 
             $pemilih->update();
             } catch (QE $e) { 
                 alert('Error','Database Error', 'error');

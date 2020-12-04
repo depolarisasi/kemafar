@@ -2,15 +2,15 @@
 @section('title','Cek Pemilih - ')
 @section('content')
 
-<section class="py-5 ">
+<section class="py-5 " style="background: url({{asset('bg/4.png')}})  no-repeat center; background-size: cover;">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4 nerko" >Cek
+              <h1 class="display-4 text-white nerko" >Cek
                 <span class="text-primary-2">Hak</span> 
                 Pilihmu</h1>
                 <div class="my-4">
-                  <p class="lead">Isi NPM pada kolom dibawah ini untuk mengecek apakah kamu sudah terdaftar sebagai pemilih tetap pada pemilu 2020.</p>
+                  <p class="text-white lead">Isi NPM pada kolom dibawah ini untuk mengecek apakah kamu sudah terdaftar sebagai pemilih tetap pada pemilu 2020.</p>
                   <form id="myForm">
     @csrf 
     <div class="form-group row mt-4">

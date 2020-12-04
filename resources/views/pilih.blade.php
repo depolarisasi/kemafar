@@ -22,7 +22,7 @@
                   <div class="grid mb-5 ">
                     @foreach($bem as $b)
                     <label class="card">
-                      <input name="suara_calidbem" class="radio" type="radio" value="{{$b->idcalonbem}}"> 
+                      <input name="suara_calidbem" class="radio" type="radio" value="{{$b->idcalonbem}}" required> 
                       <span class="plan-details noborder">
                         <span class="plan-type">{{$b->calon_nourut}}</span>
                          <img src="{{asset($b->calon_pasfoto)}}" class="img-fluid mt-2 mb-2" style="height: 250px;">
@@ -41,7 +41,7 @@
                   <div class="grid">
                     @foreach($bpm as $p)
                     <label class="card noborder">
-                      <input name="suara_calidbpm" class="radio" type="radio"  value="{{$p->idcalonbpm}}"> 
+                      <input name="suara_calidbpm" class="radio" type="radio"  value="{{$p->idcalonbpm}}" required> 
                       <span class="plan-details noborder">
                         <span class="plan-type">{{$p->calon_nourut}}</span>
                          <img src="{{asset($p->calon_pasfoto)}}" class="img-fluid mt-2 mb-2"  style="height: 250px;"> 

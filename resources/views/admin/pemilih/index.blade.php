@@ -16,6 +16,35 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-body p-3"> 
+                                    <h4 class="header-title mt-0 mb-1">Kirim Kode</h4>
+                                    <p class="sub-header">
+                                      Masukan NPM Mahasiswa untuk mengirim kode Unik
+                                    <br>
+                                    </p>  
+                                                    
+<form method="POST" action="{{url('pengelola/pemilih/sendcode')}}">
+    @csrf
+    
+    <div class="form-group row mt-4">
+      <label class="col-md-2" >NPM Pemilih</label>
+      <div class="col-md-3">
+      <input type="text" class="form-control" name="pemilih_npm"  required autofocus>
+      </div>
+    </div> 
+  <div class="form-group row mt-4">
+    <div class="col-md-12">
+<button class="btn btn-md btn-primary" type="submit">Kirim Kode</button>
+    </div>
+</div>
+
+  </form>
+                                     
+                                       
+                                </div>
+                                            </div>
+
+                                <div class="card">
+                                    <div class="card-body p-3"> 
                                     <h4 class="header-title mt-0 mb-1">Daftar Pemilih</h4>
                                     <p class="sub-header">
                                       Berikut ini pemilih sebagai kategori dari pemilih & calon.

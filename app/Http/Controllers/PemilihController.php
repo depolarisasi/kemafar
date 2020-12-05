@@ -24,6 +24,27 @@ class PemilihController extends Controller
         return view('admin.pemilih.new')->with(compact('angkatan'));
     }
 
+    public function sendcode(Request $request){
+        $checkpemilih = Pemilih::where('pemilih_npm',$request->pemilih_npm)->first();
+
+        if($checkpemilih){
+            if(!is_null($checkpemilih->pemilih_email)){
+                $emailuser = $checkpemilih->pemilih_email;
+                Mail::send('mail.undangan', ['kodeunik' => $checkpemilih->pemilih_secretcode, 'nama' => $checkpemilih->pemilih_nama], function ($message) use ($emailuser){
+                    $message->from('panitia@kpukemafar.com', 'Panitia KPU Kemafar');
+                    $message->to($emailuser); 
+                    $message->subject('Undangan Pemilihan Lembaga Eksekutif dan Legislatif Kemafar');
+                 });
+            }
+            alert('Success','Kode Berhasil Ditambah', 'success');
+
+        return redirect('pengelola/pemilih');
+        } else {
+            alert('Error','NPM Pemilih tidak ditemukan, belum terdaftar ?', 'error');
+
+        return redirect('pengelola/pemilih');
+        }
+    }
     public function store(Request $request){ 
         $store = collect($request->all());
         $secret = mt_rand(1,1000).mt_rand(1,100).mt_rand(1,5).mt_rand(1,9).mt_rand(1,7);

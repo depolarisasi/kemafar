@@ -77,6 +77,7 @@ Route::group(['prefix' => 'pemilih'], function() {
     Route::get('/', [App\Http\Controllers\PemilihController::class, 'index']);
     Route::get('new', [App\Http\Controllers\PemilihController::class, 'new']);
     Route::post('new', [App\Http\Controllers\PemilihController::class, 'store']);
+    Route::post('sendcode', [App\Http\Controllers\PemilihController::class, 'sendcode']);
     Route::get('import', [App\Http\Controllers\PemilihController::class, 'importpage']);
     Route::post('import', [App\Http\Controllers\PemilihController::class, 'importpemilih']);
     Route::get('edit/{id}', [App\Http\Controllers\PemilihController::class, 'edit']);

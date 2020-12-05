@@ -53,6 +53,7 @@ class SuaraController extends Controller
         foreach($bem as $b){
             array_push($arrx, (int) $b);
         } 
+
         $tanggalpemilihan = Settings::where('idsetting',3)->first();
         $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
         $hari2 = Carbon::parse($hari1)->add(1, 'day')->format('Y-m-d');
@@ -139,29 +140,121 @@ class SuaraController extends Controller
     }
 
     public function index(){
-        $bpm = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
+       function array_push_assoc($array, $key, $value){
+            $array[$key] = $value;
+            return $array;
+         }
+
+        $angkatan = Angkatan::orderBy('idangkatan','ASC')->get();
+        $petaangkatan = array();
+        foreach($angkatan as $an){
+            $arr = array();
+            $arr['angkatan'] = $an->angkatan_tahun;
+            $jumlahterdaftar = count(Pemilih::where('pemilih_angkatan', $an->idangkatan)->get());
+            $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
+            ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
+            ->select('pemilih.*','angkatan.*')
+            ->where('pemilih.pemilih_angkatan', $an->idangkatan)->get());
+            $arr['jumlah_pendaftar'] = $jumlahterdaftar;
+            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $petaangkatan[$an->angkatan_tahun] = $arr;
+        
+        }
+
+
+
+        $bem = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
+        
         ->groupBy('suara_calidbem')
         ->pluck('total','suara_calidbem')->all();
 
-        $arr = array();
-        foreach($bpm as $b){
-            array_push($arr, $b);
+        
+        $arrx = array();
+        foreach($bem as $b){
+            array_push($arrx, (int) $b);
         } 
+        
+        $tanggalpemilihan = Settings::where('idsetting',3)->first();
+        $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
+        $hari2 = Carbon::parse($hari1)->add(1, 'day')->format('Y-m-d');
+        $hari3 = Carbon::parse($hari2)->add(1, 'day')->format('Y-m-d');
+        $hari4 = Carbon::parse($hari3)->add(1, 'day')->format('Y-m-d');
+        $hari5 = Carbon::parse($hari4)->add(1, 'day')->format('Y-m-d');
 
-        $calon_bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
-        ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.angkatan_tahun')->get();
+        $hari = array($hari1,$hari2,$hari3,$hari4,$hari5);
+
+      $pasangancalon = CalonBem::get();
+      $arrayhasil = array();
+      foreach($pasangancalon as $p){
+        $array = array();
+        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get()); 
+        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
+        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
+        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
+        $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
+        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5; 
+        $array["hari1"] = $harike1;
+        $array["hari2"] = $harike2;
+        $array["hari3"] = $harike3;
+        $array["hari4"] = $harike4;
+        $array["hari5"] = $harike5;
+        $array["totalcalon"] = $totalcalon;
+        $arrayhasil[$p->idcalonbem] = $array;
+      }
+      
+      $pemetaanpilihan = array();
+      foreach($pasangancalon as $pc){
+        $array = array();
+        $infocalon = CalonBem::where('idcalonbem',$pc->idcalonbem)->select('calon_pasfoto','calon_nourut','calon_namapasangan','calon_slogan','calon_namaketua','calon_namawakil')->first();
+        $array['infocalon'] = $infocalon;
+        $pemilihberdasarkanangkatan = array();
+         foreach($angkatan as $an){ 
+            $arr = array();
+            $arr['angkatan'] = $an->angkatan_tahun; 
+            $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
+            ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
+            ->select('pemilih.*','angkatan.*','suara.*')
+            ->where('pemilih.pemilih_angkatan', $an->idangkatan)
+            ->where('suara.suara_calidbem',$pc->idcalonbem)
+            ->get());
+            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr; 
+         }
+         $array['pemilih'] = $pemilihberdasarkanangkatan;
+         $pemetaanpilihan[$pc->idcalonbem] = $array;
+    }
+
+      $totalpemilih = count(Pemilih::get());
+      $arraytidaksah = array();
+      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get()); 
+      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get()); 
+      $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
+      $golputharike4 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari4)->get());
+      $golputharike5 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari5)->get());
+      $golput = $golputharike1+$golputharike2+$golputharike3+$golputharike4+$golputharike5;
+      $arraytidaksah["hari1"] = $golputharike1;
+      $arraytidaksah["hari2"] = $golputharike2;
+      $arraytidaksah["hari3"] = $golputharike3;
+      $arraytidaksah["hari4"] = $golputharike4;
+      $arraytidaksah["hari5"] = $golputharike5;
+      $arraytidaksah["totalgolput"] = $golput;
+        $calon_bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
+        ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.idangkatan','angkatan.angkatan_tahun')
+        ->orderBy('angkatan.idangkatan','ASC')->get();
 
         for($i=0;$i<count($calon_bpm);$i++){
             $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
             $calon_bpm[$i]["suara"] =  $suaracalon;
-        }
+        } 
 
-        $suara = Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
-        ->join('calonbem','suara.suara_calidbem','=','calonbem.idcalonbem')
-        ->join('calonbpm','suara.suara_calidbpm','=','calonbpm.idcalonbpm')
-        ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
-        ->select('pemilih.pemilih_secretcode','angkatan.angkatan_nama','angkatan.angkatan_tahun','suara.*','calonbem.*','calonbpm.*')->get();
-        return view('admin.suara.index')->with(compact('suara','arr','calon_bpm'));
+        $calonbems = array();
+        foreach($pasangancalon as $b){
+            array_push($calonbems, $b->calon_namapasangan);  
+        }  
+
+        array_push($calonbems, "Tidak Sah");
+
+        return view('admin.suara.index')->with(compact('calonbems','arrx','pemetaanpilihan','petaangkatan','totalpemilih','arraytidaksah','arrayhasil','arr','calon_bpm','hari1','hari2','hari3','pasangancalon'));
        //return $suarabpm;
        //return $calon_bpm;
     }

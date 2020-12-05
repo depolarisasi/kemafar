@@ -30,7 +30,7 @@ class PemilihImport implements ToCollection, WithHeadingRow
         if(empty($checkpemilih)){
             $insert = new Pemilih();
             $insert->insertOrIgnore([
-                'pemilih_npm'                               => $row['npm'],
+                'pemilih_npm'          => (string) $row['npm'],
                 'pemilih_nama'                 => $row['nama'],
                 'pemilih_email'                  => $row['email'],
                 'pemilih_angkatan'                  => $row['angkatan'],

@@ -5,7 +5,7 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4 nerko text-center">Hasil Pemilihan Umum KMFH 2020</h1>
+              <h1 class="display-4 nerko text-center">Hasil Pemilihan Umum Kemafar 2020</h1>
                  <!-- content -->
                  <div class="row">
                             <div class="col-md-7">
@@ -20,6 +20,8 @@
       <th scope="col">Suara Hari 1</th>
       <th scope="col">Suara Hari 2</th>
       <th scope="col">Suara Hari 3</th>
+      <th scope="col">Suara Hari 4</th>
+      <th scope="col">Suara Hari 5</th>
       <th scope="col">Total Suara Masuk</th>
     </tr> 
   </thead>
@@ -31,6 +33,8 @@
       <td>{{$arrayhasil[$p->idcalonbem]['hari1']}}</td>
       <td>{{$arrayhasil[$p->idcalonbem]['hari2']}}</td>
       <td>{{$arrayhasil[$p->idcalonbem]['hari3']}}</td>
+      <td>{{$arrayhasil[$p->idcalonbem]['hari4']}}</td>
+      <td>{{$arrayhasil[$p->idcalonbem]['hari5']}}</td>
       <td>{{$arrayhasil[$p->idcalonbem]['totalcalon']}}</td>
     </tr> 
   @endforeach
@@ -40,6 +44,8 @@
       <td>{{$arraytidaksah['hari1']}}</td>
       <td>{{$arraytidaksah['hari2']}}</td>
       <td>{{$arraytidaksah['hari3']}}</td>
+      <td>{{$arraytidaksah['hari4']}}</td>
+      <td>{{$arraytidaksah['hari5']}}</td>
       <td>{{$arraytidaksah['totalgolput']}}</td>
     </tr> 
     

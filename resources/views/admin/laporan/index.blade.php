@@ -47,7 +47,7 @@
                                
                             <td>
                               <a href="{{url('pengelola/laporan/detail/'.$a->idlaporan)}}" class="btn btn-sm btn-primary"><i class="uil-info-circle"></i> Detail</a>
-                                <a href="{{url('pengelola/laporan/edit/'.$a->idlaporan)}}" class="btn btn-sm btn-info"><i class="uil-edit"></i> Proses</a>
+                                <a href="{{url('pengelola/laporan/proses/'.$a->idlaporan)}}" class="btn btn-sm btn-info"><i class="uil-edit"></i> Proses</a>
                                 <button type="button" href="{{url('pengelola/laporan/delete/'.$a->idlaporan)}}" class="deletebtn btn btn-sm btn-danger"><i class="uil-trash"></i> Delete</button></td>
                         </tr>
                         @endforeach

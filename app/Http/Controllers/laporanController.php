@@ -27,7 +27,7 @@ class laporanController extends Controller
     }
     
     public function index(){
-        $laporan = laporan::where('laporan_status',0)->get();
+        $laporan = laporan::orderBy('idlaporan','DESC')->get();
         return view('admin.laporan.index')->with(compact('laporan'));
         
     }

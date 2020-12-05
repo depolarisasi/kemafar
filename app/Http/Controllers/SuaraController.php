@@ -51,7 +51,7 @@ class SuaraController extends Controller
         
         $arrx = array();
         foreach($bem as $b){
-            array_push($arrx, $b);
+            array_push($arrx, (int) $b);
         } 
         $tanggalpemilihan = Settings::where('idsetting',3)->first();
         $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
@@ -68,8 +68,8 @@ class SuaraController extends Controller
         $array = array();
         $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get()); 
         $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
-        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
-        $harike4= count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
+        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
+        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
         $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
         $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5; 
         $array["hari1"] = $harike1;
@@ -125,10 +125,16 @@ class SuaraController extends Controller
             $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
             $calon_bpm[$i]["suara"] =  $suaracalon;
         } 
-        
+
+        $calonbems = array();
+        foreach($pasangancalon as $b){
+            array_push($calonbems, $b->calon_namapasangan);  
+        }  
+
+        array_push($calonbems, "Tidak Sah");
     
-    return view('hasilpemilihan')->with(compact('arrx','pemetaanpilihan','petaangkatan','totalpemilih','arraytidaksah','arrayhasil','arr','calon_bpm','hari1','hari2','hari3','pasangancalon'));
-   // return $hari1;   
+    return view('hasilpemilihan')->with(compact('calonbems','arrx','pemetaanpilihan','petaangkatan','totalpemilih','arraytidaksah','arrayhasil','arr','calon_bpm','hari1','hari2','hari3','pasangancalon'));
+   //return $arrayhasil;   
  
     }
 

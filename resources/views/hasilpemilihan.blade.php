@@ -161,7 +161,7 @@ $("#tgldibuka").flatpickr({maxDate: new Date(),dateFormat: "Y/m/d",allowInput: t
 e = {
                 chart: { height: 320, type: "pie" },
                 series:  {!! json_encode($arrx, JSON_HEX_TAG) !!},
-                labels: ["Macan Asia", "Joma",],
+                labels: {!! json_encode($calonbems, JSON_HEX_TAG) !!},
                 legend: { show: !0, position: "bottom", horizontalAlign: "center", verticalAlign: "middle", floating: !1, fontSize: "14px", offsetX: 0, offsetY: -10 },
                 responsive: [{ breakpoint: 600, options: { chart: { height: 240 }, legend: { show: !1 } } }],
             };

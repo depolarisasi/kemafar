@@ -2,15 +2,16 @@
 @section('title','Cek Pemilih - ')
 @section('content')
 
+<div class="background-1">
 <section class="py-5 ">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4 nerko">Kenali
+              <h1 class="display-4 nerko text-white">Kenali
                 <span class="text-primary-2">Calon</span> 
                 Pemimpinmu</h1>
                 <div class="my-4">
-                  <p class="lead">Kenali lebih dekat, siapa mereka, apa visi dan misi mereka dan apa yang akan mereka rencanakan untuk kampusmu !</p>
+                  <p class="lead text-white">Kenali lebih dekat, siapa mereka, apa visi dan misi mereka dan apa yang akan mereka rencanakan untuk kampusmu !</p>
                    
               
                 </div>
@@ -33,7 +34,7 @@
               <div class="row mt-3"> 
                 <div class="col-12 text-center mb-3">
                   
-                <h2 class="text-center nerko">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
+                <h2 class="text-center nerko text-white">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
                 </div>
                 
                 @foreach($bem as $b)
@@ -56,7 +57,7 @@
               <div class="row mt-3"> 
                 <div class="col-12 text-center mb-3">
                   
-                <h2 class="text-center nerko"> Calon Anggota BPM</h2>
+                <h2 class="text-center nerko text-white" > Calon Anggota BPM</h2>
                 </div>
                 
                 @foreach($bpm as $p)
@@ -81,13 +82,13 @@
  
  
       
-<section class="bg-primary text-light py-2 py-md-1 o-hidden" style="background: url({{asset('bg/3.png')}})  no-repeat center; background-size: cover;">
+<section class="text-light py-2 py-md-1 o-hidden">
  
     <div class="container align-items-center text-center text-md-left">
       <div class="row py-6 align-items-center"> 
           <div class="col-12  d-flex flex-column justify-content-center"><div>
             <span class="badge badge-primary-2 mb-2 lead">Siap gunakan hak pilih ?</span>
-            <h2 class="h1 nerko">Tentukan Masa Depan Kampusmu Sekarang</h2>
+            <h2 class="h1 nerko">Tentukan Masa Depan Kemafar Sekarang</h2>
             <p class="lead">Join google meet, masukkan kode rahasia dengan kode unik yang akan diberikan oleh admin, hanya 5 menit!.</p>
             <a href="{{url('pilih')}}" class="btn btn-lg btn-white mt-3">Gunakan Hak Pilih</a>
           </div>
@@ -95,7 +96,7 @@
       </div>
     </div>
   </section>
-
+</div>
   @section('js')
   <script>
          $(document).ready(function(){

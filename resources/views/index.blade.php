@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title',"")
 @section('content')
-  
-<section class="bg-primary-alt o-hidden py-5" style="background: url({{asset('bg/1.jpg')}})  no-repeat center; background-size: cover;"> 
+<div class="background-1">
+<section class="o-hidden py-5"> 
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-7 text-center text-lg-left mb-5 mt-3">
@@ -27,13 +27,13 @@ pilihmu.</p>
             <div class="row align-items-center">
               <div class="col-md-12 d-flex align-items-center">
                 <div>
-                  <h2 class="display-4 nerko ">Kenalan Yuk !</h2> 
+                  <h2 class="display-4 nerko text-white">Kenalan Yuk !</h2> 
                     </div>
                   </div>
               <div class="col-md-12 order-md-last mb-4 mb-md-0">
                 <div class="row mt-3  d-flex align-items-center"> 
                   <div class="col-12 text-center mb-3"> 
-                  <h2 class="text-center  nerko ">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
+                  <h2 class="text-center nerko text-white">Pasangan Calon Ketua & Wakil Ketua BEM</h2>
                   </div>
                   
                   @foreach($calonbem as $b)
@@ -56,7 +56,7 @@ pilihmu.</p>
                  
                 <div class="row mt-3"> 
                   <div class="col-12 text-center mb-3" > 
-                  <h2 class="text-center"> Calon Anggota BPM</h2>
+                  <h2 class="text-center nerko text-white"> Calon Anggota BPM</h2>
                   </div>  
                   @foreach($calonbpm as $p)
                   <div class="col-md-4 col-lg-4 col-sm-6" >
@@ -80,7 +80,7 @@ pilihmu.</p>
                 </div>
               </section>
 
-   <section class="pt-0 pt-md-5 pt-xl-7 layer-4" style="background: url({{asset('bg/2.jpg')}})  no-repeat center; background-size: cover;">
+   <section class="pt-0 pt-md-5 pt-xl-7 layer-4">
      <div class="decoration-wrapper d-none d-lg-block">
        
       </div>
@@ -115,7 +115,7 @@ pilihmu.</p>
           </div>
         </section>
       
-<section class="bg-primary text-light py-2 py-md-1 o-hidden" style="background: url({{asset('bg/3.png')}})  no-repeat center; background-size: cover;">
+<section class="text-light py-2 py-md-1 o-hidden">
  
  <div class="container align-items-center text-center text-md-left">
    <div class="row py-6 align-items-center"> 
@@ -129,4 +129,5 @@ pilihmu.</p>
    </div>
  </div>
 </section>
+</div>
 @endsection

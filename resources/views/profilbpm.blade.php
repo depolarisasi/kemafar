@@ -1,13 +1,13 @@
 @extends('layouts.main')
 @section('title','Profil Calon '.$detail->calon_namacalon.' - ')
 @section('content')
-<section class="o-hidden py-5 ">
+<section class="o-hidden py-5">
             <div class="container">
           <div class="row align-items-center flex-column-reverse flex-md-row min-vh-40 mt-5">
             <div class="col-lg-7 text-center text-lg-left mb-4 mt-2 mb-lg-0">
-              <h1 class="display-4 nerko">{{$detail->calon_namacalon}}</h1> 
+              <h1 class="display-4 nerko text-white">{{$detail->calon_namacalon}}</h1> 
                 <div class="my-2">  
-                  <p class="lead"> <span class="badge badge-primary">Angkatan {{$detail->angkatan_tahun}}</span>  <span class="badge badge-secondary">Nomor Urut {{$detail->calon_nourut}}</span></p>
+                  <p class="lead text-white"> <span class="badge badge-primary">Angkatan {{$detail->angkatan_tahun}}</span>  <span class="badge badge-secondary">Nomor Urut {{$detail->calon_nourut}}</span></p>
                 </div> 
               </div>
               <div class="col-lg-5 text-center">
@@ -15,14 +15,14 @@
               </div>
             </div>
 
-            <div class="row mt-3">
-              <div class="col-md-12">
-                <h2 class="nerko">Biografi Calon</h2>
+            <div class="row mt-3 text-white">
+              <div class="col-md-12 text-white">
+                <h2 class="nerko text-white">Biografi Calon</h2>
                 {!! $detail->calon_biografi !!}
               </div>
 
-              <div class="col-md-12 mt-5">
-                <h2 class="nerko">Visi, Misi & Program Kerja Calon</h2>
+              <div class="col-md-12 mt-5 text-white">
+                <h2 class="nerko text-white">Visi, Misi & Program Kerja Calon</h2>
                 {!! $detail->calon_prokervisimisi !!}
               </div>
             </div>

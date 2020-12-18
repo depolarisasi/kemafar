@@ -2,12 +2,12 @@
 @section('title','Info Pemilu & Timeline - ')
 @section('content')
 
-<section class="py-5 ">
+<section class="py-5 text-white" >
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 mb-4 mb-lg-0">
-              <h1 class="display-4 nerko text-center ">Info Pemilu</h1> 
-              <table class="table mt-2">
+              <h1 class="display-4 nerko text-center text-white ">Info Pemilu</h1> 
+              <table class="table mt-2 text-white">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">Timeline</th>

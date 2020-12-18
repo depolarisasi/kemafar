@@ -2,14 +2,14 @@
 @section('title','Gunakan Hak Pilih - ')
 @section('content')
 
-<section class="py-5 ">
+<section class="py-5">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
-              <h1 class="display-4 nerko"> Tentukan Pilihan</h1>
+              <h1 class="display-4 nerko text-white"> Tentukan Pilihan</h1>
                 <div class="my-4">
-                  <p class="lead">Isi kode rahasia yang dikirim ke email Student Unpad untuk menggunakan hak pilih.</p>
-                  <p><small>Kami menggunakan teknologi Cookies & Javascript, pastikan browser kamu mengaktifkan fitur Javascript dan menerima Cookies.</small></p>
+                  <p class="lead text-white">Isi kode rahasia yang dikirim ke email Student Unpad untuk menggunakan hak pilih.</p>
+                  <p class="text-white"><small>Kami menggunakan teknologi Cookies & Javascript, pastikan browser kamu mengaktifkan fitur Javascript dan menerima Cookies.</small></p>
                  
                   @if(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') >= $tanggalpemilihan->setting_value && \Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') <= \Carbon\Carbon::parse($tanggalpemilihan->setting_value)->addDays(4))
                @if( strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) >= strtotime($jammulaipemilihan->setting_value) && strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) <= strtotime($jamakhirpemilihan->setting_value) ) 
@@ -23,13 +23,13 @@
     </div> 
   <div class="form-group row mt-4">
     <div class="col-md-12">
-<button class="btn btn-lg btn-primary">Gunakan Hak Pilih</button>
+<button class="btn btn-lg btn-primary text-white">Gunakan Hak Pilih</button>
     </div>
 </div> 
 
   </form>
   @else
-  Belum Jam Pemilihan
+  <p class="text-white">Belum Jam Pemilihan</div>
   @endif
   
   @else

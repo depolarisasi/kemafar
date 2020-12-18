@@ -89,7 +89,7 @@ body {
  line-height:1.5;
  color:#495057;
  text-align:left;
- background-color:#fff
+ background-color:#272d46;
 }
 [tabindex="-1"]:focus {
  outline:0!important
@@ -18412,3 +18412,18 @@ svg.bg-yellow * {
 .nerko {
     font-family: 'Nerko One', cursive !important;
 }
+
+.background-1 {
+    background-image: url('bg1.png'); 
+    background-repeat: no-repeat;  
+    background-position: center; 
+    background-size: cover; 
+}
+ 
+.background-2 {
+    background-image: url('bg2.png'); 
+    background-repeat: no-repeat;  
+    background-position: center; 
+    background-size: cover; 
+}
+ 

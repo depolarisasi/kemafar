@@ -5,13 +5,13 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4 nerko text-center">Hasil Pemilihan Umum Kemafar 2020</h1>
+              <h1 class="display-4 nerko text-center text-white">Hasil Pemilihan Umum Kemafar 2020</h1>
                  <!-- content -->
                  <div class="row">
                             <div class="col-md-7">
                               <div class="card">
                                 <div class="card-body p-3"> 
-                                <h4 class="header-title mt-0 mb-1 nerko">Tabulasi Suara BEM</h4>
+                                <h4 class="header-title mt-0 mb-1 nerko ">Tabulasi Suara BEM</h4>
                                 <div id="apex-pie-1" class="apex-charts" dir="ltr"></div>
                                 <table class="table mt-2">
   <thead class="thead-dark">
@@ -50,8 +50,7 @@
     </tr> 
     
   </tbody>
-</table>
-<p><small>* Bukan hasil suara realtime, terdapat delay 10 menit dengan realtime untuk mencegah overload server</small></p>
+</table> 
 
                             </div>
                                         </div> 
@@ -90,9 +89,9 @@
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-2">
             <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-              <h1 class="display-4 text-center nerko">Informasi Pemilih & Sebaran Data</h1>
+              <h1 class="display-4 text-center nerko text-white">Informasi Pemilih & Sebaran Data</h1>
               <p><b>Pemilih Berdasarkan Angkatan</b></p>
-              <table class="table mt-2">
+              <table class="table mt-2 text-white">
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">Angkatan</th>
@@ -113,8 +112,8 @@
                 </div> 
                 <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
                 
-                  <p><b>Pemilih Berdasarkan Pilihan</b></p>
-                  <table class="table mt-2">
+                  <p class="text-white"><b>Pemilih Berdasarkan Pilihan</b></p>
+                  <table class="table mt-2 text-white">
                     <thead class="thead-dark">
                       <tr>
                         <th scope="col">Calon</th>

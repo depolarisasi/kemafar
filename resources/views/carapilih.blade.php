@@ -1,16 +1,16 @@
 @extends('layouts.main')
 @section('title','Cara Memilih - ')
 @section('content')
-
-<section class="py-5 ">
+<div class="background-2">
+<section class="py-5">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 mb-4 mb-lg-0">
-              <h1 class="display-4  text-center ">Panduan Memilih</h1> 
-                  <p>Selamat datang di Website Resmi Pemilihan Umum Fakultas Hukum UNPAD ! Berikut adalah panduan bagaimana kamu dapat menggunakan hak pilih kamu.</p>
+              <h1 class="display-4 text-white text-center ">Panduan Memilih</h1> 
+                  <p class="text-white">Selamat datang di Website Resmi Pemilihan Umum Fakultas Hukum UNPAD ! Berikut adalah panduan bagaimana kamu dapat menggunakan hak pilih kamu.</p>
               
-              <h3>1. Dapatkan Undangan Pemilihan Melalui Email / Google Meet</h3>
-              <p>Ikuti prosedur untuk mendapatkan kode memilih. Pemilih akan diverifikasi oleh panitia melalui Google Meet lalu pemilih akan mendapatkan email berisi kode unik untuk memilih. Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
+              <h3 class="text-white">1. Dapatkan Undangan Pemilihan Melalui Email / Google Meet</h3>
+              <p class="text-white">Ikuti prosedur untuk mendapatkan kode memilih. Pemilih akan diverifikasi oleh panitia melalui Google Meet lalu pemilih akan mendapatkan email berisi kode unik untuk memilih. Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
               <br>
               <img src="{{asset('tutorial/tutorial-1.png')}}" style="width:50%;"  class="img-fluid"></img> 
             <br>Kode pada email tersebut berbentuk angka sebanyak 6-10 digit yang bersifat random, kode ini selanjutnya akan dimasukan di halaman <a href="{{url('pilih')}}">"Tentukan Pilihan"</a> sebagai one-time password untuk menggunakan hak suara. untuk informasi mengenai cara kerja dan algoritma dibalik sistem ini silahkan lihat di halaman <a href="{{url('privacy-and-algorithm')}}">"
@@ -24,17 +24,17 @@ Kebijakan Privasi & Cara Kerja Sistem"</a>
            
 
             <br>
-              <h3>2. Tentukan Pilihan</h3>
-              <p>Setelah mendapat 6-10 digit kode, copy kode tersebut lalu kunjungi halaman <a href="{{url('pilih')}}">Tentukan Pilihan</a>
+              <h3 class="text-white">2. Tentukan Pilihan</h3>
+              <p class="text-white">Setelah mendapat 6-10 digit kode, copy kode tersebut lalu kunjungi halaman <a href="{{url('pilih')}}">Tentukan Pilihan</a>
               <br>
               <img src="{{asset('tutorial/tutorial-2.png')}}" class="img-fluid"></img> 
            
 <ul>
-<li><h4>Pilih Ketua dan Wakil Ketua BEM</h4> <br>
+<li><h4 class="text-white">Pilih Ketua dan Wakil Ketua BEM</h4> <br>
 <img src="{{asset('tutorial/tutorial-3.png')}}" style="width:50%;" class="img-fluid">
 <br>
 Pilih dengan cara klik pada foto atau nama pasangan sampai pasangan tersebut memiliki tanda ceklis</li>  
-<li><h4>Pilih Anggota BPM Angkatan</h4> <br>
+<li><h4 class="text-white">Pilih Anggota BPM Angkatan</h4> <br>
 <img src="{{asset('tutorial/tutorial-4.png')}}" style="width:50%;" class="img-fluid">
 <br>
 Pilih dengan cara klik pada foto atau nama calon anggota sampai pasangan tersebut memiliki tanda ceklis
@@ -42,7 +42,7 @@ Pilih dengan cara klik pada foto atau nama calon anggota sampai pasangan tersebu
 Pilihan Anggota BPM hanya muncul apabila pada angkatan pemilih terdapat calon BPM, calon BPM hanya ada di 3 angkatan termuda dari tahun ajaran
 </div>
             </li>  
-            <li><h4>Klik Pilih</h4>
+            <li><h4 class="text-white">Klik Pilih</h4>
 <img src="{{asset('tutorial/tutorial-5.png')}}" class="img-fluid"><br>
 Selesaikan pemilihan dengan cara klik tombol Pilih sampai redirect ke halaman terima kasih, maka suara kamu akan otomatis terekam
 <br> 
@@ -67,8 +67,7 @@ Selesaikan pemilihan dengan cara klik tombol Pilih sampai redirect ke halaman te
           </div>
         </section>
 
- 
- 
+              </div>
        
  
 @endsection

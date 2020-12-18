@@ -29,7 +29,7 @@
         <textarea name="laporan_isi" class="form-control my-editor" rows="10"></textarea>
       </div>
     </div> 
-   <p><b>Pihak panitia akan menghubungi pelapor untuk dimintai bukti</b></p>
+   <p class="text-white"><b>Pihak panitia akan menghubungi pelapor untuk dimintai bukti</b></p>
    
 
   <div class="form-group row mt-4">

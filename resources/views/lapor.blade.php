@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title','Laporan Pelanggaran - ')
 @section('content')
-
+<div class="background-2">
 <section class="py-5 ">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
@@ -47,7 +47,7 @@
           </div>
         </section>
 
- 
+</div>
  
        
  

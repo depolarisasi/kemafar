@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title','Cek Pemilih - ')
 @section('content')
-
-<section class="py-5 " style="background: url({{asset('bg/4.png')}})  no-repeat center; background-size: cover;">
+<div class="background-2">
+<section class="py-5">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 text-center  mb-4 mb-lg-0">
@@ -35,6 +35,7 @@
             </div>
           </div>
         </section>
+</div>
 
  
 <style>

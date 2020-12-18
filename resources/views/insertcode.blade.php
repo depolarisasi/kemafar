@@ -2,6 +2,7 @@
 @section('title','Gunakan Hak Pilih - ')
 @section('content')
 
+<div class="background-2">
 <section class="py-5">
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">
@@ -48,9 +49,7 @@ Hari Pemilihan adalah {{date('d M Y', strtotime($tanggalpemilihan->setting_value
             </div>
           </div>
         </section>
-
- 
- 
+</div>
        
  
 @endsection

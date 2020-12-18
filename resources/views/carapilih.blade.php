@@ -11,9 +11,8 @@
               
               <h3 class="text-white">1. Dapatkan Undangan Pemilihan Melalui Email / Google Meet</h3>
               <p class="text-white">Ikuti prosedur untuk mendapatkan kode memilih. Pemilih akan diverifikasi oleh panitia melalui Google Meet lalu pemilih akan mendapatkan email berisi kode unik untuk memilih. Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
-              <br>
-              <img src="{{asset('tutorial/tutorial-1.png')}}" style="width:50%;"  class="img-fluid"></img> 
-            <br>Kode pada email tersebut berbentuk angka sebanyak 6-10 digit yang bersifat random, kode ini selanjutnya akan dimasukan di halaman <a href="{{url('pilih')}}">"Tentukan Pilihan"</a> sebagai one-time password untuk menggunakan hak suara. untuk informasi mengenai cara kerja dan algoritma dibalik sistem ini silahkan lihat di halaman <a href="{{url('privacy-and-algorithm')}}">"
+        
+            <br>Kode tersebut berbentuk angka sebanyak 6-10 digit yang bersifat random, kode ini selanjutnya akan dimasukan di halaman <a href="{{url('pilih')}}">"Tentukan Pilihan"</a> sebagai one-time password untuk menggunakan hak suara. untuk informasi mengenai cara kerja dan algoritma dibalik sistem ini silahkan lihat di halaman <a href="{{url('privacy-and-algorithm')}}">"
 Kebijakan Privasi & Cara Kerja Sistem"</a>
             <div class="alert alert-danger" role="alert">
             KODE BERSIFAT RAHASIA, Jangan pernah berikan kode kepada siapapun. 1 Suara sangat berharga untuk menentukan kehidupan kampusmu

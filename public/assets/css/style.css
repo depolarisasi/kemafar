@@ -18426,4 +18426,12 @@ svg.bg-yellow * {
     background-position: center; 
     background-size: cover; 
 }
+
+.background-3 {
+    background-image: url('bg3.png'); 
+    background-repeat: no-repeat;  
+    background-position: center; 
+    background-size: cover; 
+}
+ 
  

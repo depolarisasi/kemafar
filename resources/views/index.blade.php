@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title',"")
 @section('content')
-<div class="background-1">
+<div class="background-3">
 <section class="o-hidden py-5"> 
             <div class="container">
           <div class="row align-items-center min-vh-40 mt-5">

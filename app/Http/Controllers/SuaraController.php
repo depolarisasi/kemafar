@@ -60,8 +60,10 @@ class SuaraController extends Controller
         $hari3 = Carbon::parse($hari2)->add(1, 'day')->format('Y-m-d');
         $hari4 = Carbon::parse($hari3)->add(1, 'day')->format('Y-m-d');
         $hari5 = Carbon::parse($hari4)->add(1, 'day')->format('Y-m-d');
+        $hari6 = Carbon::parse($hari5)->add(1, 'day')->format('Y-m-d');
+        $hari7 = Carbon::parse($hari6)->add(1, 'day')->format('Y-m-d');
 
-        $hari = array($hari1,$hari2,$hari3,$hari4,$hari5);
+        $hari = array($hari1,$hari2,$hari3,$hari4,$hari5,$hari6,$hari7);
 
       $pasangancalon = CalonBem::get();
       $arrayhasil = array();
@@ -72,12 +74,16 @@ class SuaraController extends Controller
         $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
         $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
         $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
-        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5; 
+        $harike6 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari6)->get());
+        $harike7 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari7)->get());
+        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7; 
         $array["hari1"] = $harike1;
         $array["hari2"] = $harike2;
         $array["hari3"] = $harike3;
         $array["hari4"] = $harike4;
         $array["hari5"] = $harike5;
+        $array["hari6"] = $harike6;
+        $array["hari7"] = $harike7;
         $array["totalcalon"] = $totalcalon;
         $arrayhasil[$p->idcalonbem] = $array;
       }
@@ -111,12 +117,16 @@ class SuaraController extends Controller
       $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
       $golputharike4 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari4)->get());
       $golputharike5 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari5)->get());
-      $golput = $golputharike1+$golputharike2+$golputharike3+$golputharike4+$golputharike5;
+      $golputharike6 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari6)->get());
+      $golputharike7 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari7)->get());
+      $golput = $golputharike1+$golputharike2+$golputharike3+$golputharike4+$golputharike5+$golputharike6+$golputharike7;
       $arraytidaksah["hari1"] = $golputharike1;
       $arraytidaksah["hari2"] = $golputharike2;
       $arraytidaksah["hari3"] = $golputharike3;
       $arraytidaksah["hari4"] = $golputharike4;
       $arraytidaksah["hari5"] = $golputharike5;
+      $arraytidaksah["hari6"] = $golputharike6;
+      $arraytidaksah["hari7"] = $golputharike7;
       $arraytidaksah["totalgolput"] = $golput;
         $calon_bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.idangkatan','angkatan.angkatan_tahun')
@@ -180,6 +190,8 @@ class SuaraController extends Controller
         $hari3 = Carbon::parse($hari2)->add(1, 'day')->format('Y-m-d');
         $hari4 = Carbon::parse($hari3)->add(1, 'day')->format('Y-m-d');
         $hari5 = Carbon::parse($hari4)->add(1, 'day')->format('Y-m-d');
+        $hari6 = Carbon::parse($hari5)->add(1, 'day')->format('Y-m-d');
+        $hari7 = Carbon::parse($hari6)->add(1, 'day')->format('Y-m-d');
 
         $hari = array($hari1,$hari2,$hari3,$hari4,$hari5);
 
@@ -192,12 +204,16 @@ class SuaraController extends Controller
         $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
         $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
         $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
-        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5; 
+        $harike6 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari6)->get());
+        $harike7 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari7)->get());
+        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7; 
         $array["hari1"] = $harike1;
         $array["hari2"] = $harike2;
         $array["hari3"] = $harike3;
         $array["hari4"] = $harike4;
         $array["hari5"] = $harike5;
+        $array["hari6"] = $harike6;
+        $array["hari7"] = $harike7;
         $array["totalcalon"] = $totalcalon;
         $arrayhasil[$p->idcalonbem] = $array;
       }
@@ -231,12 +247,16 @@ class SuaraController extends Controller
       $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
       $golputharike4 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari4)->get());
       $golputharike5 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari5)->get());
-      $golput = $golputharike1+$golputharike2+$golputharike3+$golputharike4+$golputharike5;
+      $golputharike6 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari6)->get());
+      $golputharike7 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari7)->get());
+      $golput = $golputharike1+$golputharike2+$golputharike3+$golputharike4+$golputharike5+$golputharike6+$golputharike7;
       $arraytidaksah["hari1"] = $golputharike1;
       $arraytidaksah["hari2"] = $golputharike2;
       $arraytidaksah["hari3"] = $golputharike3;
       $arraytidaksah["hari4"] = $golputharike4;
       $arraytidaksah["hari5"] = $golputharike5;
+      $arraytidaksah["hari6"] = $golputharike6;
+      $arraytidaksah["hari7"] = $golputharike7;
       $arraytidaksah["totalgolput"] = $golput;
         $calon_bpm = CalonBPM::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
         ->select('calonbpm.idcalonbpm','calonbpm.calon_namacalon','calonbpm.calon_pasfoto','angkatan.idangkatan','angkatan.angkatan_tahun')

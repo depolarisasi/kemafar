@@ -7,7 +7,7 @@
           <div class="row align-items-center min-vh-40 mt-5">
             <div class="col-lg-12 mb-4 mb-lg-0">
               <h1 class="display-4 text-white text-center ">Panduan Memilih</h1> 
-                  <p class="text-white">Selamat datang di Website Resmi Pemilihan Umum Fakultas Hukum UNPAD ! Berikut adalah panduan bagaimana kamu dapat menggunakan hak pilih kamu.</p>
+                  <p class="text-white">Selamat datang di Website Resmi Pemilihan Umum Fakultas Farmasi UNPAD ! Berikut adalah panduan bagaimana kamu dapat menggunakan hak pilih kamu.</p>
               
               <h3 class="text-white">1. Dapatkan Undangan Pemilihan Melalui Email / Google Meet</h3>
               <p class="text-white">Ikuti prosedur untuk mendapatkan kode memilih. Pemilih akan diverifikasi oleh panitia melalui Google Meet lalu pemilih akan mendapatkan email berisi kode unik untuk memilih. Apabila kamu telah terdaftar maka kamu akan secara otomatis mendapatkan email berupa kode unik pemilihan ke alamat email UNPAD (@mail.unpad.ac.id), email akan berbentuk seperti ini :  
@@ -18,7 +18,7 @@ Kebijakan Privasi & Cara Kerja Sistem"</a>
             KODE BERSIFAT RAHASIA, Jangan pernah berikan kode kepada siapapun. 1 Suara sangat berharga untuk menentukan kehidupan kampusmu
             </div>
             <div class="alert alert-info" role="alert">
-            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pengiriman kode akan dimulai minimal H-3 sebelum pemilihan dimulai, apabila pada hari H kode belum terkirim namun sudah terdaftar sebagai pemilih silahkan hubungi panitia KPUM 
+            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pengiriman kode akan dimulai saat masuk Google Meet sebelum pemilihan dimulai, apabila pada hari H kode belum terkirim namun sudah terdaftar sebagai pemilih silahkan hubungi panitia KPUM 
             </div>
            
 

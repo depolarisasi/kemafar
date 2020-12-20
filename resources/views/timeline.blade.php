@@ -81,24 +81,24 @@
                     <td>Kampanye Tertutup</td> 
                   </tr> 
                   <tr>
-                    <th scope="row">07 - 17 Desember 2020</th> 
+                    <th scope="row">07 - 18 Desember 2020</th> 
                     <td>Kampanye Mandiri</td> 
                   </tr> 
                   <tr>
-                    <th scope="row">17 Desember 2020</th> 
+                    <th scope="row">18 Desember 2020</th> 
                     <td>Kampanye Terbuka</td> 
                   </tr> 
                   <tr>
-                    <th scope="row">18 - 20 Desember 2020</th> 
+                    <th scope="row">19 - 20 Desember 2020</th> 
                     <td>Masa Tenang</td> 
                   </tr> 
                   <tr>
-                    <th scope="row">21 - 25 Desember 2020</th> 
+                    <th scope="row">21-23, 26-27 Desember 2020</th> 
                     <td>Pemilihan Calon Ketua & Wakil Ketua BEM dan Anggota BPM oleh Kemafar</td> 
                   </tr> 
                   <tr>
-                    <th scope="row">25 Desember 2020</th> 
-                    <td>Perhitungan Suara</td> 
+                    <th scope="row">27 Desember 2020</th> 
+                    <td>Perhitungan Suara* <small>*Perhitungan suara disesuaikan dengan selesainya pemiliha</small></td> 
                   </tr> 
 
                 

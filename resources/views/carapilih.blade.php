@@ -18,7 +18,7 @@ Kebijakan Privasi & Cara Kerja Sistem"</a>
             KODE BERSIFAT RAHASIA, Jangan pernah berikan kode kepada siapapun. 1 Suara sangat berharga untuk menentukan kehidupan kampusmu
             </div>
             <div class="alert alert-info" role="alert">
-            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pengiriman kode akan dimulai saat masuk Google Meet sebelum pemilihan dimulai, apabila pada hari H kode belum terkirim namun sudah terdaftar sebagai pemilih silahkan hubungi panitia KPUM 
+            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pengiriman kode akan dimulai saat masuk Google Meet sebelum pemilihan dimulai 
             </div>
            
 
@@ -56,7 +56,7 @@ Selesaikan pemilihan dengan cara klik tombol Pilih sampai redirect ke halaman te
             </div>
 
             <div class="alert alert-warning" role="alert">
-            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pastikan, untuk kelancaran, kenyamanan dan keamanan memilih, pemilih disarankan untuk menggunakan Browser dari Laptop atau PC seperti Firefox, dan Chrome dengan enable Javascript dan juga Accept Cookies, segala bentuk error karena kesalahan pemilih karena tidak mengikuti anjuran cara pemilihan bukan tanggung jawab KPUM.
+            <span class="badge badge-warning"><b>Perlu Diperhatikan</b></span> Pastikan, untuk kelancaran, kenyamanan dan keamanan memilih, pemilih disarankan untuk menggunakan Browser dari Laptop atau PC seperti Firefox, dan Chrome dengan enable Javascript dan juga Accept Cookies, segala bentuk error karena kesalahan pemilih karena tidak mengikuti anjuran cara pemilihan bukan tanggung jawab KPU Kemafar.
             </div>
            
             </p>

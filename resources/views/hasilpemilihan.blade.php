@@ -110,38 +110,8 @@
                 </tbody>
               </table>
                 </div> 
-                <div class="col-lg-12 text-center text-lg-left mb-4 mb-lg-0">
-                
-                  <p class="text-white"><b>Pemilih Berdasarkan Pilihan</b></p>
-                  <table class="table mt-2 text-white">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">Calon</th>
-                        @foreach($petaangkatan as $p) 
-                        <th scope="row">{{$p['angkatan']}}</th>    
-                      @endforeach  
-                     
-                    </tr> 
-                    </thead>
-                    <tbody>
-                    @foreach($pemetaanpilihan as $pe)
-                    <tr>
-                      <th scope="row"> 
-                        <img src="{{asset($pe['infocalon']['calon_pasfoto'])}}" class="img-fluid rounded-circle" style="width: 48px; height:48px;">
-                        <p class="ml-2 d-inline-block"><b>{{$pe['infocalon']['calon_nourut']}} - {{$pe['infocalon']['calon_namapasangan']}}</p>
-                      </th> 
-                      @foreach($pe['pemilih'] as $p)
-                      
-                      <td>{{$p['jumlah_pemilih']}}</td>
-                      
-                      @endforeach
-                        
-                    </tr> 
-                      @endforeach 
-                    </tbody>
-                  </table>
-               
-                    </div>
+
+     
               </div> 
             </div>
           </div>

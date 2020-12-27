@@ -11,28 +11,28 @@
                 <div class="my-4">
                   <p class="lead text-white">Isi kode rahasia yang dikirim ke email Student Unpad untuk menggunakan hak pilih.</p>
                   <p class="text-white"><small>Kami menggunakan teknologi Cookies & Javascript, pastikan browser kamu mengaktifkan fitur Javascript dan menerima Cookies.</small></p>
-                 
-                  @if(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') >= $tanggalpemilihan->setting_value && \Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') <= \Carbon\Carbon::parse($tanggalpemilihan->setting_value)->addDays(4))
-               @if( strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) >= strtotime($jammulaipemilihan->setting_value) && strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) <= strtotime($jamakhirpemilihan->setting_value) ) 
-                 
+
+                  @if(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') >= $tanggalpemilihan->setting_value && \Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('Y-m-d') <= \Carbon\Carbon::parse($tanggalpemilihan->setting_value)->addDays(6))
+               @if( strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) >= strtotime($jammulaipemilihan->setting_value) && strtotime(\Carbon\Carbon::now()->timezone('Asia/Jakarta')->format('H:i')) <= strtotime($jamakhirpemilihan->setting_value) )
+
                   <form method="POST" action="{{url('pilih')}}">
-    @csrf 
+    @csrf
     <div class="form-group row mt-4">
       <div class="col-md-4 offset-lg-4 offset-md-4 col-sm-12">
       <input type="text" class="form-control border border-primary" placeholder="Masukan Kode Rahasia" name="secretcode">
       </div>
-    </div> 
+    </div>
   <div class="form-group row mt-4">
     <div class="col-md-12">
 <button class="btn btn-lg btn-primary text-white">Gunakan Hak Pilih</button>
     </div>
-</div> 
+</div>
 
   </form>
   @else
   <p class="text-white">Belum Jam Pemilihan</div>
   @endif
-  
+
   @else
   <div class="alert alert-warning" role="alert">
 Belum Hari Pemilihan <br>
@@ -40,16 +40,16 @@ Hari Pemilihan adalah {{date('d M Y', strtotime($tanggalpemilihan->setting_value
 </div>
   @endif
   <div id="msgs"></div>
-              
+
                 </div>
 
-            
+
               </div>
-               
+
             </div>
           </div>
         </section>
 </div>
-       
- 
+
+
 @endsection

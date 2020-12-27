@@ -65,7 +65,7 @@ class SuaraController extends Controller
 
         $hari = array($hari1,$hari2,$hari3,$hari4,$hari5,$hari6,$hari7);
 
-      $pasangancalon = CalonBem::get();
+      $pasangancalon = CalonBem::orderBy('idcalonbem','ASC')->get();
       $arrayhasil = array();
       foreach($pasangancalon as $p){
         $array = array();
@@ -177,8 +177,6 @@ class SuaraController extends Controller
 
         ->groupBy('suara_calidbem')
         ->pluck('total','suara_calidbem')->all();
-
-
         $arrx = array();
         foreach($bem as $b){
             array_push($arrx, (int) $b);

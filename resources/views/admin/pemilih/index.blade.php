@@ -68,10 +68,10 @@
                                                     <td>{{$a->pemilih_npm}}</td>
                                                     <td>{{$a->pemilih_nama}}</td> 
                                                     <td>{{$a->angkatan_tahun}}</td>
-                                                    <td>@if($a->pemilih_status == 1)
-    
-                                                    @else
+                                                    <td>@if(is_null($a->pemilih_pilihan)) 
                                                     Belum Memilih
+                                                    @else 
+                                                    Sudah Memilih
                                                     @endif
                                                     </td>  
                                                     <td>

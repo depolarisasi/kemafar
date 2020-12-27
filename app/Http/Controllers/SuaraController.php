@@ -8,11 +8,11 @@ use App\Models\CalonBem;
 use App\Models\CalonBPM;
 use App\Models\Pemilih;
 use Carbon\Carbon;
-use App\Models\Angkatan; 
+use App\Models\Angkatan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
-use Illuminate\Database\QueryException as QE; 
+use Illuminate\Database\QueryException as QE;
 use Cookie;
 use DB;
 use Illuminate\Http\Response;
@@ -36,29 +36,29 @@ class SuaraController extends Controller
             ->select('pemilih.*','angkatan.*')
             ->where('pemilih.pemilih_angkatan', $an->idangkatan)->get());
             $arr['jumlah_pendaftar'] = $jumlahterdaftar;
-            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $arr['jumlah_pemilih'] = $jumlahpemilih;
             $petaangkatan[$an->angkatan_tahun] = $arr;
-        
+
         }
 
 
 
         $bem = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
-        
+
         ->groupBy('suara_calidbem')
         ->pluck('total','suara_calidbem')->all();
 
-        
+
         $arrx = array();
         foreach($bem as $b){
             array_push($arrx, (int) $b);
-        } 
+        }
 
         $tanggalpemilihan = Settings::where('idsetting',3)->first();
         $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
         $hari2 = Carbon::parse($hari1)->add(1, 'day')->format('Y-m-d');
         $hari3 = Carbon::parse($hari2)->add(1, 'day')->format('Y-m-d');
-        $hari4 = Carbon::parse($hari3)->add(1, 'day')->format('Y-m-d');
+        $hari4 = Carbon::parse($hari3)->add(3, 'day')->format('Y-m-d');
         $hari5 = Carbon::parse($hari4)->add(1, 'day')->format('Y-m-d');
         $hari6 = Carbon::parse($hari5)->add(1, 'day')->format('Y-m-d');
         $hari7 = Carbon::parse($hari6)->add(1, 'day')->format('Y-m-d');
@@ -69,14 +69,14 @@ class SuaraController extends Controller
       $arrayhasil = array();
       foreach($pasangancalon as $p){
         $array = array();
-        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get()); 
-        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
-        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
-        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
+        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get());
+        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get());
+        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get());
+        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get());
         $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
         $harike6 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari6)->get());
         $harike7 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari7)->get());
-        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7; 
+        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7;
         $array["hari1"] = $harike1;
         $array["hari2"] = $harike2;
         $array["hari3"] = $harike3;
@@ -87,24 +87,24 @@ class SuaraController extends Controller
         $array["totalcalon"] = $totalcalon;
         $arrayhasil[$p->idcalonbem] = $array;
       }
-      
+
       $pemetaanpilihan = array();
       foreach($pasangancalon as $pc){
         $array = array();
         $infocalon = CalonBem::where('idcalonbem',$pc->idcalonbem)->select('calon_pasfoto','calon_nourut','calon_namapasangan','calon_slogan','calon_namaketua','calon_namawakil')->first();
         $array['infocalon'] = $infocalon;
         $pemilihberdasarkanangkatan = array();
-         foreach($angkatan as $an){ 
+         foreach($angkatan as $an){
             $arr = array();
-            $arr['angkatan'] = $an->angkatan_tahun; 
+            $arr['angkatan'] = $an->angkatan_tahun;
             $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
             ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
             ->select('pemilih.*','angkatan.*','suara.*')
             ->where('pemilih.pemilih_angkatan', $an->idangkatan)
             ->where('suara.suara_calidbem',$pc->idcalonbem)
             ->get());
-            $arr['jumlah_pemilih'] = $jumlahpemilih; 
-            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr; 
+            $arr['jumlah_pemilih'] = $jumlahpemilih;
+            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr;
          }
          $array['pemilih'] = $pemilihberdasarkanangkatan;
          $pemetaanpilihan[$pc->idcalonbem] = $array;
@@ -112,8 +112,8 @@ class SuaraController extends Controller
 
       $totalpemilih = count(Pemilih::get());
       $arraytidaksah = array();
-      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get()); 
-      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get()); 
+      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get());
+      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get());
       $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
       $golputharike4 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari4)->get());
       $golputharike5 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari5)->get());
@@ -135,18 +135,18 @@ class SuaraController extends Controller
         for($i=0;$i<count($calon_bpm);$i++){
             $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
             $calon_bpm[$i]["suara"] =  $suaracalon;
-        } 
+        }
 
         $calonbems = array();
         foreach($pasangancalon as $b){
-            array_push($calonbems, $b->calon_namapasangan);  
-        }  
+            array_push($calonbems, $b->calon_namapasangan);
+        }
 
         array_push($calonbems, "Tidak Sah");
-    
+
     return view('hasilpemilihan')->with(compact('calonbems','arrx','pemetaanpilihan','petaangkatan','totalpemilih','arraytidaksah','arrayhasil','arr','calon_bpm','hari1','hari2','hari3','pasangancalon'));
-   //return $arrayhasil;   
- 
+   //return $arrayhasil;
+
     }
 
     public function index(){
@@ -166,24 +166,24 @@ class SuaraController extends Controller
             ->select('pemilih.*','angkatan.*')
             ->where('pemilih.pemilih_angkatan', $an->idangkatan)->get());
             $arr['jumlah_pendaftar'] = $jumlahterdaftar;
-            $arr['jumlah_pemilih'] = $jumlahpemilih; 
+            $arr['jumlah_pemilih'] = $jumlahpemilih;
             $petaangkatan[$an->angkatan_tahun] = $arr;
-        
+
         }
 
 
 
         $bem = Suara::select('suara_calidbem', DB::raw('count(*) as total'))
-        
+
         ->groupBy('suara_calidbem')
         ->pluck('total','suara_calidbem')->all();
 
-        
+
         $arrx = array();
         foreach($bem as $b){
             array_push($arrx, (int) $b);
-        } 
-        
+        }
+
         $tanggalpemilihan = Settings::where('idsetting',3)->first();
         $hari1 = Carbon::createFromFormat('Y-m-d', $tanggalpemilihan->setting_value)->format('Y-m-d');
         $hari2 = Carbon::parse($hari1)->add(1, 'day')->format('Y-m-d');
@@ -199,14 +199,14 @@ class SuaraController extends Controller
       $arrayhasil = array();
       foreach($pasangancalon as $p){
         $array = array();
-        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get()); 
-        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get()); 
-        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get()); 
-        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get()); 
+        $harike1 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari1)->get());
+        $harike2 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari2)->get());
+        $harike3 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari3)->get());
+        $harike4 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari4)->get());
         $harike5 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari5)->get());
         $harike6 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari6)->get());
         $harike7 = count(Suara::where("suara_calidbem",$p->idcalonbem)->where("suara_tanggal",$hari7)->get());
-        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7; 
+        $totalcalon = $harike1+$harike2+$harike3+$harike4+$harike5+$harike6+$harike7;
         $array["hari1"] = $harike1;
         $array["hari2"] = $harike2;
         $array["hari3"] = $harike3;
@@ -217,24 +217,24 @@ class SuaraController extends Controller
         $array["totalcalon"] = $totalcalon;
         $arrayhasil[$p->idcalonbem] = $array;
       }
-      
+
       $pemetaanpilihan = array();
       foreach($pasangancalon as $pc){
         $array = array();
         $infocalon = CalonBem::where('idcalonbem',$pc->idcalonbem)->select('calon_pasfoto','calon_nourut','calon_namapasangan','calon_slogan','calon_namaketua','calon_namawakil')->first();
         $array['infocalon'] = $infocalon;
         $pemilihberdasarkanangkatan = array();
-         foreach($angkatan as $an){ 
+         foreach($angkatan as $an){
             $arr = array();
-            $arr['angkatan'] = $an->angkatan_tahun; 
+            $arr['angkatan'] = $an->angkatan_tahun;
             $jumlahpemilih = count(Suara::join('pemilih','suara.suara_idpemilih','=','pemilih.idpemilih')
             ->join('angkatan','pemilih.pemilih_angkatan','=','angkatan.idangkatan')
             ->select('pemilih.*','angkatan.*','suara.*')
             ->where('pemilih.pemilih_angkatan', $an->idangkatan)
             ->where('suara.suara_calidbem',$pc->idcalonbem)
             ->get());
-            $arr['jumlah_pemilih'] = $jumlahpemilih; 
-            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr; 
+            $arr['jumlah_pemilih'] = $jumlahpemilih;
+            $pemilihberdasarkanangkatan[$an->angkatan_tahun] = $arr;
          }
          $array['pemilih'] = $pemilihberdasarkanangkatan;
          $pemetaanpilihan[$pc->idcalonbem] = $array;
@@ -242,8 +242,8 @@ class SuaraController extends Controller
 
       $totalpemilih = count(Pemilih::get());
       $arraytidaksah = array();
-      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get()); 
-      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get()); 
+      $golputharike1 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari1)->get());
+      $golputharike2 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari2)->get());
       $golputharike3 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari3)->get());
       $golputharike4 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari4)->get());
       $golputharike5 = count(Suara::where("suara_calidbem",Null)->where("suara_tanggal",$hari5)->get());
@@ -265,12 +265,12 @@ class SuaraController extends Controller
         for($i=0;$i<count($calon_bpm);$i++){
             $suaracalon = Suara::where('suara_calidbpm', $calon_bpm[$i]["idcalonbpm"])->count();
             $calon_bpm[$i]["suara"] =  $suaracalon;
-        } 
+        }
 
         $calonbems = array();
         foreach($pasangancalon as $b){
-            array_push($calonbems, $b->calon_namapasangan);  
-        }  
+            array_push($calonbems, $b->calon_namapasangan);
+        }
 
         array_push($calonbems, "Tidak Sah");
 
@@ -281,7 +281,7 @@ class SuaraController extends Controller
 
 
     public function pilihauthenticate(Request $request){
-        
+
         $cookies = $request->cookie('secret');
         $tanggalpemilihan = Settings::where('idsetting',3)->first();
         $jammulaipemilihan = Settings::where('idsetting',4)->first();
@@ -293,7 +293,7 @@ class SuaraController extends Controller
         }
     }
 
-    public function authenticateuser(Request $request){ 
+    public function authenticateuser(Request $request){
         $pemilih = Pemilih::where('pemilih_secretcode', $request->secretcode)->first();
         $suara = Suara::where('suara_secretcode', $request->secretcode)->get();
         $cookies = $request->cookie('sudahisi');
@@ -306,14 +306,14 @@ class SuaraController extends Controller
     }
 
     public function pilihauthenticated(Request $request){
-        
+
         $cookies = $request->cookie('secret');
 
         if($cookies){
             $bem = CalonBem::join('angkatan','calonbem.calon_angkatanketua','=','angkatan.idangkatan')
-            ->select('calonbem.*','angkatan.*')->orderBy('calonbem.calon_nourut','asc')->get(); 
+            ->select('calonbem.*','angkatan.*')->orderBy('calonbem.calon_nourut','asc')->get();
             $angkatan = Pemilih::where('pemilih_secretcode', $cookies)->first();
-           
+
             $bpm = CalonBpm::join('angkatan','calonbpm.calon_angkatancalon','=','angkatan.idangkatan')
             ->select('calonbpm.*','angkatan.*')->where('calonbpm.calon_angkatancalon',$angkatan->pemilih_angkatan)->get();
             $idpem = $angkatan->idpemilih;
@@ -321,11 +321,11 @@ class SuaraController extends Controller
         }else {
             return redirect('pilih');
         }
-        
+
     }
 
     public function storepilihan(Request $request){
-        $store = collect(); 
+        $store = collect();
         $pemilih = Pemilih::where('idpemilih', $request->suara_idpemilih)->first();
         $cookies = $request->cookie('secret');
         $hariini = Carbon::now('Asia/Jakarta')->locale('id_ID')->format('Y-m-d');
@@ -333,28 +333,28 @@ class SuaraController extends Controller
         $store->put('suara_calidbem',$request->suara_calidbem);
         $store->put('suara_calidbpm',$request->suara_calidbpm);
         $store->put('suara_idpemilih',$pemilih->idpemilih);
-        $store->put('suara_jam',$jamini);        
-        $store->put('suara_tanggal',$hariini);        
+        $store->put('suara_jam',$jamini);
+        $store->put('suara_tanggal',$hariini);
         $store->put('suara_secretcode',$pemilih->pemilih_secretcode);
         $store->put('suara_cookies',$cookies);
 
-        
+
         $suara = Suara::where('suara_secretcode', $request->secretcode)->get();
         if(is_null($pemilih->pemilih_pilihan) && count($suara) == 0){
         try {
             $idsuara = Suara::insertGetId($store->all());
             $cookie = Cookie::forget('secret');
-            $pemilih->pemilih_pilihan = $idsuara; 
+            $pemilih->pemilih_pilihan = $idsuara;
             $pemilih->update();
-            } catch (QE $e) { 
+            } catch (QE $e) {
                 alert('Error','Database Error', 'error');
                 return $e;
             }
         }
-        
+
         $cookie = Cookie::forget('secret');
             return redirect('thankyou')->withCookie(cookie('sudahisi', 'sudah isi', 160))->withCookie($cookie);
-      
+
     }
 
     public function thankyou(Request $request){
